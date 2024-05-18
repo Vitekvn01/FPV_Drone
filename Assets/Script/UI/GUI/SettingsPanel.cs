@@ -22,7 +22,7 @@ public class SettingsPanel : MonoBehaviour
         _settingMovementText.text = "Режим управления: " + _inputSettings.MovementType.ToString();
         _settingInversionText.text = "Инверсия наклона: " + _inputSettings.OnInversionJoystick.ToString();
         _settingSensetiveText.text = "Чувствительность ввода";
-        SelectSensetiveJoystick();
+        _slider.value = _inputSettings.SensitiveJoystick;
     }
 
 

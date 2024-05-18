@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class IndicatorsFlight : MonoBehaviour
 {
-    [SerializeField] private PlayerController _playerController;
+    [SerializeField] private PlayerInput _playerController;
     [SerializeField] private TextMeshProUGUI _speedText;
     [SerializeField] private TextMeshProUGUI _heightText;
     // Update is called once per frame
