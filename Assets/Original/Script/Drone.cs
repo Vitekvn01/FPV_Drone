@@ -2,42 +2,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Drone : MonoBehaviour
 {
+    [SerializeField] DroneType _droneType;
+    public DroneType DroneType => _droneType;
+
     [Header("Характеристики")]
-    [SerializeField] private float _maxSpeed;
-    [SerializeField] private int forceUp;
-    [SerializeField] private int forceHelixRotate;
-    [SerializeField] private int forceTilt;
-    [SerializeField] private int forceRotate;
+    [SerializeField] protected float _maxSpeed;
+    [SerializeField] protected int forceTraction;
+    [SerializeField] protected int forceHelixRotate;
+    [SerializeField] protected int forceTilt;
+    [SerializeField] protected int forceRotate;
 
     [SerializeField] private List<GameObject> helixList;
 
     private float _currentSpeed;
     private float _currentHeight;
 
-    private Rigidbody rb;
-    private Vector3 tiltDir; // направление наклона
-    private Vector3 tractionDir; // направление тяги
-    private Vector3 rotationDir; // направление поврота
-    private float _hoverForce;
+    protected Rigidbody rb;
+    protected Vector3 tiltDir; // направление наклона
+    protected Vector3 tractionDir; // направление тяги
+    protected Vector3 rotationDir; // направление поврота
+    protected float _hoverForce;
 
-    [SerializeField] private GameObject _explosionPrefub;
+
 
     public UnityEvent OnDestroyEvent;
-    private void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
-        SpawnExplosion();
         Destroy(gameObject, 0);
     }
 
-    private void SpawnExplosion()
-    {
-        GameObject _explosion = Instantiate(_explosionPrefub, gameObject.transform);
-        Destroy(_explosion, 2);
-    }
 
-    private void Start()
+
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
@@ -79,7 +78,7 @@ public class Drone : MonoBehaviour
     /// </summary>
     protected virtual void Traction()
     {
-        rb.AddRelativeForce(tractionDir * forceUp * Time.deltaTime, ForceMode.Acceleration);  // тяга
+        rb.AddRelativeForce(tractionDir * forceTraction * Time.deltaTime, ForceMode.Acceleration);  // тяга
     }
 
     /// <summary>
@@ -109,10 +108,14 @@ public class Drone : MonoBehaviour
 
     protected virtual void RotateHelix()
     {
-        foreach (GameObject helix in helixList)
+        if (helixList != null)
         {
-            helix.transform.Rotate(Vector3.forward * forceUp, Space.Self);
+            foreach (GameObject helix in helixList)
+            {
+                helix.transform.Rotate(Vector3.forward * forceTraction, Space.Self);
+            }
         }
+
     }
 
     #region API
@@ -135,6 +138,7 @@ public class Drone : MonoBehaviour
     public void SetDirRotation(Vector3 Value, float Sensitive)
     {
         rotationDir.x = Value.x * Sensitive;
+        rotationDir.y = - Value.y * Sensitive;
     }
 
     public void SetDrugRigidbody(float Drag)
@@ -142,12 +146,12 @@ public class Drone : MonoBehaviour
         rb.drag = Drag;
     }
 
-    public float SetCurrentSpeed()
+    public float GetCurrentSpeed()
     {
         return _currentSpeed;
     }
 
-    public float SetCurrentHeight()
+    public float GetCurrentHeight()
     {
         return _currentHeight;
     }

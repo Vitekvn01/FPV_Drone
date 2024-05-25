@@ -6,14 +6,25 @@ public enum InputMode
     KeyBoard
 }
 
+public enum DroneType
+{
+    Drone,
+    ScoutDrone,
+}
+
 public class PlayerInput : SingletonBase<PlayerInput>
 {
     [SerializeField] private Drone _drone;
+
+    [SerializeField] private GameObject _zoomButtonPanel;
+    [SerializeField] private PointerClickHold _upClickHold;
+    [SerializeField] private PointerClickHold _downClickHold;
     [SerializeField] private VirtualJoystick _mobilelJoystickRight;
     [SerializeField] private VirtualJoystick _mobilelJoystickLeft;
 
     [SerializeField] private InputSettings _inputSettings;
     [SerializeField] private InputMode _inputMode;
+    [SerializeField] private DroneType _droneType;
 
     private MovementType _movementType => _inputSettings.MovementType;
     private bool _inversionJoystick => _inputSettings.OnInversionJoystick;
@@ -54,7 +65,17 @@ public class PlayerInput : SingletonBase<PlayerInput>
 
         if (_drone != null)
         {
-            MoveFPVDrone();
+            if (_drone.DroneType == DroneType.Drone)
+            {
+                MoveFPVDrone();
+            }
+
+            if (_drone.DroneType == DroneType.ScoutDrone)
+            {
+
+                MoveScoutDrone();
+            }
+
             SetParametrFliht();
         }
     }
@@ -62,6 +83,23 @@ public class PlayerInput : SingletonBase<PlayerInput>
     public void SetTargetDrone(Drone drone)
     {
         _drone = drone;
+        if (_drone.DroneType == DroneType.ScoutDrone)
+        {
+            DrawZoomButtonPanel(true);
+            
+        }
+        else
+        {
+            DrawZoomButtonPanel(false);
+            _mobilelJoystickLeft.gameObject.SetActive(true);
+            
+        }
+    }
+
+    private void DrawZoomButtonPanel(bool Value)
+    {
+        _zoomButtonPanel.gameObject.SetActive(Value);
+        _mobilelJoystickLeft.gameObject.SetActive(false);
     }
 
     private void MoveFPVDrone()
@@ -81,10 +119,28 @@ public class PlayerInput : SingletonBase<PlayerInput>
         }
     }
 
+    private void MoveScoutDrone()
+    {
+        if (_drone is ScoutDrone)
+        {
+            ScoutDrone scoutDrone = (ScoutDrone)_drone;
+            if (_upClickHold.IsHold)
+            {
+                scoutDrone.AddZOOM();
+            }
+            if (_downClickHold.IsHold)
+            {
+                scoutDrone.RemoveZOOM();
+            }
+
+        }
+        _drone.SetDirRotation(torque, SensitiveJoystick);
+    }
+
     private void SetParametrFliht()
     {
-        _currentSpeed = _drone.SetCurrentSpeed();
-        _currentHeight = _drone.SetCurrentHeight();
+        _currentSpeed = _drone.GetCurrentSpeed();
+        _currentHeight = _drone.GetCurrentHeight();
     }
 }
 

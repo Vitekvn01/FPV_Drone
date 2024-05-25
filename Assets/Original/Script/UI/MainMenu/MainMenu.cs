@@ -14,7 +14,11 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (LevelData.CurrentLevel != null)
+        {
+            SceneManager.LoadScene(LevelData.CurrentLevel.SceneName);
+        }
+        else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void SettingsButton()
     {

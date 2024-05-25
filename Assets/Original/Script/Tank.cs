@@ -35,9 +35,8 @@ public class Tank : Destructible
         }
     }
 
-    protected override void Start()
+    protected void Start()
     {
-        base.Start();
         _rb = GetComponent<Rigidbody>();
         _rb.mass = 30000f;
         _moveAi = GetComponent<AIController>();

@@ -5,21 +5,27 @@ using UnityEngine.UI;
 
 public class LevelSelectionButton : MonoBehaviour
 {
-    [SerializeField] private LevelProperties _levelProperties;
+    private LevelProperties _levelProperties;
     [SerializeField] private TextMeshProUGUI _levelTitle;
     [SerializeField] private Image _previewImage;
-
+    [SerializeField] private Image _levelLockIcon;
     private void Start()
     {
-/*        if (_levelProperties == null) return;
-
-        _previewImage.sprite = _levelProperties.PreviewImage;
-        _levelTitle.text = _levelProperties.Title;*/
+        _levelLockIcon.gameObject.SetActive(false);
+        if (_levelProperties.LevelLock == true)
+        {
+            _levelLockIcon.gameObject.SetActive(true);
+        }
     }
 
     public void LoadLevel()
-    {
-        SceneManager.LoadScene(_levelProperties.SceneName);
+    {   
+        if (_levelProperties != null && _levelProperties.LevelLock != true)
+        {
+            LevelController.Instance.LevelSystem.SetCurrentLevel(_levelProperties);
+            SceneManager.LoadScene(_levelProperties.SceneName);
+            
+        }
     }
 
     public void SetLevelProperty(LevelProperties levelProperties)

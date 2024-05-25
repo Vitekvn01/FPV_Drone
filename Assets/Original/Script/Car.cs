@@ -10,9 +10,8 @@ public class Car : Destructible
     private AIController _moveAi;
     private Rigidbody _rb;
 
-    protected override void Start()
+    protected void Start()
     {
-        base.Start();
         _rb = GetComponent<Rigidbody>();
         _rb.mass = 3000f;
         _moveAi = GetComponent<AIController>();

@@ -132,8 +132,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 692782040}
+  - component: {fileID: 692782041}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: LevelController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,6 +155,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &692782041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692782039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d000c2681e42560438c2d8742d27672c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doNotDestroyOnLoad: 1
+  _levelData: {fileID: 11400000, guid: 869590d9984bb2549bfa62b8b4ccb6d3, type: 2}
 --- !u!1 &1416398728
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +431,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1783481276143666444, guid: 0521a8c1ae220f34e9160eace7030049, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783481276143666444, guid: 0521a8c1ae220f34e9160eace7030049, type: 3}
+      propertyPath: _levelData
+      value: 
+      objectReference: {fileID: 11400000, guid: 869590d9984bb2549bfa62b8b4ccb6d3, type: 2}
+    - target: {fileID: 1783481276143666444, guid: 0521a8c1ae220f34e9160eace7030049, type: 3}
+      propertyPath: _levelSystem
+      value: 
+      objectReference: {fileID: 11400000, guid: 869590d9984bb2549bfa62b8b4ccb6d3, type: 2}
     - target: {fileID: 3269262180739261165, guid: 0521a8c1ae220f34e9160eace7030049, type: 3}
       propertyPath: m_Name
       value: MainMenu

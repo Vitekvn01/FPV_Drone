@@ -154,7 +154,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.DefaultCompany.FPV_Drone_test2
+    Android: com.DefaultCompany.FPV_Drone
     Standalone: com.DefaultCompany.FPV-Drone
   buildNumber:
     Standalone: 0
