@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Player : SingletonBase<Player>
+public class PlayerController : SingletonBase<PlayerController>
 {
     [SerializeField] private DroneSpawner _droneSpawner;
 
@@ -19,6 +18,8 @@ public class Player : SingletonBase<Player>
     [SerializeField] private Drone _droneScout; // временно
 
     [SerializeField] private GameObject _respawnPanel;
+
+    public UnityEvent OnOverCountDroneEvent;
 
     private void Start()
     {
@@ -50,7 +51,8 @@ public class Player : SingletonBase<Player>
         _countDrone -= 1;
         if (_countDrone <= 0)
         {
-
+            OnOverCountDroneEvent.Invoke();
+            _countDrone = 0;
         }
     }
 

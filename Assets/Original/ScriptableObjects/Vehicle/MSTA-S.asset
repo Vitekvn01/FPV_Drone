@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0dcecc913d2f943b4bf1e3b0b5ea00, type: 3}
   m_Name: MSTA-S
   m_EditorClassIdentifier: 
-  _vehiclePrefab: {fileID: 1612006592853808427, guid: f0e2c5712fffdfa429117b8ad793c2d1, type: 3}
-  _name: "\u041C\u0421\u0422\u0410"
-  _text: Msta-s
+  VehiclePrefab: {fileID: 1612006592853808427, guid: f0e2c5712fffdfa429117b8ad793c2d1, type: 3}
+  Name: 
+  Text: 

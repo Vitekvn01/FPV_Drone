@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0dcecc913d2f943b4bf1e3b0b5ea00, type: 3}
   m_Name: HAMVI
   m_EditorClassIdentifier: 
-  _vehiclePrefab: {fileID: 5694524759439210115, guid: b409dc870140f3d4ea38f7c2945a3249, type: 3}
-  _name: 
-  _text: 
+  VehiclePrefab: {fileID: 5694524759439210115, guid: b409dc870140f3d4ea38f7c2945a3249, type: 3}
+  Name: 
+  Text: 

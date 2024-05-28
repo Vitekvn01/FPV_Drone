@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0dcecc913d2f943b4bf1e3b0b5ea00, type: 3}
   m_Name: ChineTank
   m_EditorClassIdentifier: 
-  _vehiclePrefab: {fileID: 4555353931971936174, guid: d5511e01c7c850a499f624b9909e829e, type: 3}
-  _name: -----
-  _text: Chine
+  VehiclePrefab: {fileID: 4555353931971936174, guid: d5511e01c7c850a499f624b9909e829e, type: 3}
+  Name: 
+  Text: 

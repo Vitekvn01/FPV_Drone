@@ -28,5 +28,9 @@ public class LevelController : SingletonBase<LevelController>
         LevelComplete.OnCompleteLevelEvent.RemoveListener(LevelPassed);
     }
 
+    private void LevelLose()
+    {
+
+    }
 
 }

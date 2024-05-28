@@ -9,10 +9,10 @@ public class RespawnPanel : MonoBehaviour
 
     private void Update()
     {
-        _countText.text = Player.Instance.CountDrone.ToString();
+        _countText.text = PlayerController.Instance.CountDrone.ToString();
     }
     public void RespawnButton()
     {
-        Player.Instance.SpawnDrone();
+        PlayerController.Instance.SpawnDrone();
     }
 }

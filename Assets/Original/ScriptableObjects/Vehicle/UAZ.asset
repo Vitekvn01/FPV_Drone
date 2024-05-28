@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0dcecc913d2f943b4bf1e3b0b5ea00, type: 3}
   m_Name: UAZ
   m_EditorClassIdentifier: 
-  _vehiclePrefab: {fileID: 9135218002965536996, guid: 702bef2301edce341a83b4635c32bef1, type: 3}
-  _name: UAZ
-  _text: "\u0411\u0443\u0445\u0430\u043D\u043A\u0430"
+  VehiclePrefab: {fileID: 9135218002965536996, guid: 702bef2301edce341a83b4635c32bef1, type: 3}
+  Name: 
+  Text: 

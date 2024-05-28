@@ -6,11 +6,9 @@ using UnityEngine;
 [System.Serializable]
 public class VehicleProperties : ScriptableObject
 {
-    public GameObject _vehiclePrefab;
+    public GameObject VehiclePrefab;
 
-    public string _name;
+    public string Name;
 
-    public string _text;
-
-    public GameObject VehiclePrefab => _vehiclePrefab;
+    public string Text;
 }

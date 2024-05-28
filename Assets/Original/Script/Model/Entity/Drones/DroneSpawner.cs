@@ -12,6 +12,6 @@ public class DroneSpawner : Spawner
         base.Spawn();
         Drone drone = spawnObject.GetComponent<Drone>();
         Camera camera = drone.GetComponent<Camera>();
-        Player.Instance.SetTargetDrone(drone, camera);
+        PlayerController.Instance.SetTargetDrone(drone, camera);
     }
 }

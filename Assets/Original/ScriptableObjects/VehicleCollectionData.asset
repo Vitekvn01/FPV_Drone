@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb9156e88c63d7846a8cae3627f2cf9c, type: 3}
-  m_Name: VehicleCollectionController
+  m_Name: VehicleCollectionData
   m_EditorClassIdentifier: 
   allVehicleCount: []
-  _vehicles:
-  - {fileID: 11400000, guid: 40c99a5671160044facbba44cdad23f7, type: 2}
-  - {fileID: 11400000, guid: 77ec8ed6a109db64e8febd0df804e683, type: 2}
+  _vehicles: []
+  _vehiclesPropertiesData: []
