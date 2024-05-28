@@ -4464,9 +4464,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbd7522ec80b79479f232cf00cc22ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyObject:
+  OnDeadEvent:
     m_PersistentCalls:
       m_Calls: []
+  vehicleProperties: {fileID: 11400000, guid: 77ec8ed6a109db64e8febd0df804e683, type: 2}
   TurretDefeat: {fileID: 4312179792221374166}
   BortDefeat: {fileID: 6952637563627214116}
   _turret: {fileID: 127086154477710103}

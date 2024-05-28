@@ -5,6 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _levelPanel;
     [SerializeField] private GameObject _settingsPanel;
+    [SerializeField] private GameObject _collectionPanel;
 
     private int levelIndex;
     void Start()
@@ -24,14 +25,23 @@ public class MainMenu : MonoBehaviour
     {
         _settingsPanel.SetActive(true);
         _levelPanel.SetActive(false);
+        _collectionPanel.SetActive(false);
     }
 
     public void LevelButton()
     {
         _levelPanel.SetActive(true);
         _settingsPanel.SetActive(false);
+        _collectionPanel.SetActive(false);
     }
 
+    public void CollectionButton()
+    {
+        _collectionPanel.SetActive(true);
+        _collectionPanel.GetComponent<CollectionPanel>().StartCollectionButton();
+        _settingsPanel.SetActive(false);
+        _levelPanel.SetActive(false);
+    }
     public void ExitButton()
     {
         Application.Quit();

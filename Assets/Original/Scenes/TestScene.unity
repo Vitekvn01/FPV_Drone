@@ -8022,10 +8022,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ccf2fe0bdd4cd40893a7177e672103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _doNotDestroyOnLoad: 0
-  OnCompleteLevelEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &794049463
 Transform:
   m_ObjectHideFlags: 0
@@ -20445,10 +20441,6 @@ PrefabInstance:
       propertyPath: _drone
       value: 
       objectReference: {fileID: 700471863}
-    - target: {fileID: 5907425568075324230, guid: 1816bf239ece5b8458463c7821cba4f7, type: 3}
-      propertyPath: _inputMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6580357258434969351, guid: 1816bf239ece5b8458463c7821cba4f7, type: 3}
       propertyPath: m_Pivot.x
       value: 0

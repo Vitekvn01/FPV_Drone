@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Car : Destructible
+public class Car : Vehicle
 {
     [SerializeField] private List<ParticleSystem> _flames;
 

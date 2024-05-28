@@ -382,7 +382,7 @@ Transform:
   m_GameObject: {fileID: 4555353931971936174}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.64, y: 0.5426811, z: -1.64}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -407,9 +407,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbd7522ec80b79479f232cf00cc22ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyObject:
+  OnDeadEvent:
     m_PersistentCalls:
       m_Calls: []
+  vehicleProperties: {fileID: 11400000, guid: a4d3360814d4636499ef2ead309bfe74, type: 2}
   TurretDefeat: {fileID: 5854833506956356017}
   BortDefeat: {fileID: 3464673061009934422}
   _turret: {fileID: 8571513853313375975}

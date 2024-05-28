@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
-public class Tank : Destructible
+public class Tank : Vehicle
 {
 
     [SerializeField] private ColliderElement TurretDefeat;
@@ -12,12 +12,6 @@ public class Tank : Destructible
     [SerializeField] private List<ParticleSystem> _flames;
     [SerializeField] private int _explosionForce;
 
-    /*
-        [Header("Поврот башни")]
-        [SerializeField] private float _dirRotateTurretX;
-        [SerializeField] private float _dirRotateTurretY;
-        [SerializeField] private float _dirRotateTurretZ;
-        [SerializeField] private float _timeRotateTurret;*/
 
     private bool dronesAttack = false;
     

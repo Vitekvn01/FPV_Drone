@@ -578,9 +578,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e3f04a8b556a240b0b38a69aded889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyObject:
+  OnDeadEvent:
     m_PersistentCalls:
       m_Calls: []
+  vehicleProperties: {fileID: 11400000, guid: 5d2f9010a847f354696fdb482272a84e, type: 2}
   _flames:
   - {fileID: 7982379497535094534}
   - {fileID: 7217328079216356826}

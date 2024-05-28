@@ -17,16 +17,16 @@ public class LevelController : SingletonBase<LevelController>
     {
         if (LevelComplete.OnCompleteLevelEvent != null)
         {
-            LevelComplete.OnCompleteLevelEvent.AddListener(Win);
+            LevelComplete.OnCompleteLevelEvent.AddListener(LevelPassed);
         }
-             
     }
 
-    private void Win()
+    private void LevelPassed()
     {
-
         _levelData.NextLevelUnlock();
         Debug.Log("Победа");
-        LevelComplete.OnCompleteLevelEvent.RemoveListener(Win);
+        LevelComplete.OnCompleteLevelEvent.RemoveListener(LevelPassed);
     }
+
+
 }

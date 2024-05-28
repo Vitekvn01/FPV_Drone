@@ -4,7 +4,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 [CreateAssetMenu]
-[Serializable]
 public class LevelProperties : ScriptableObject
 {
     [SerializeField] private string _title;
