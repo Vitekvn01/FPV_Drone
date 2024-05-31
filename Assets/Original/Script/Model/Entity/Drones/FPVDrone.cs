@@ -15,7 +15,7 @@ public class FPVDrone : Drone
 
     protected override void OnCollisionEnter(Collision collision)
     {
-        _explosionSpawn.Spawn();
+        _explosionSpawn.Spawn(gameObject.transform.position);
         base.OnCollisionEnter(collision);
     }
 }

@@ -1,97 +1,117 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(NavMeshAgent))]
 public class AIController : MonoBehaviour
 {
-    [SerializeField] private Transform[] _waypoints;
-    [SerializeField] private Transform[] _wheels;
-    [SerializeField] private float _rotationSpeed;
-    [SerializeField] private bool isFreeze;
+    [SerializeField] protected Transform[] _waypoints;
 
     // Расстояние на которое необходимо приблизиться к точке
-    [SerializeField] private float distanceToChangeGoal;
+    [SerializeField] protected float _distanceComplete = 2;
     // Номер текущей целевой точки
     private int _currentWaypoint = 0;
 
-    private Rigidbody _rb;
-    private NavMeshAgent _navMeshAgent;
+    protected Rigidbody _rb;
+    protected NavMeshAgent _navMeshAgent;
 
-    private bool _movingCurrent = true;
-
-    void Start()
+    protected virtual void Start()
     {
-        // Сохранение компонента агента и направление к первой точке
-        _rb = GetComponent<Rigidbody>();
+        if (_waypoints.Length > 0)
+        {
+            GetInStart();
+            TurnOnAI();
+            MoveToWaypoint(_waypoints[_currentWaypoint]);
+        }
+        else
+        {
+            TurnoOffAi();
+        }
+
+    }
+
+    protected virtual void Update()
+    {
+        if (_waypoints.Length > 0)
+        {
+            MovementPathWaypoints();
+        }
+    }
+
+    protected virtual void GetInStart()
+    {
+        if (gameObject.GetComponent<Rigidbody>() != null)
+        {
+            _rb = GetComponent<Rigidbody>();
+        }
+
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        
-        if (!isFreeze)
+    }
+
+    protected virtual void SetCurrentWaypoint(int indexWaypoint)
+    {
+        _currentWaypoint = indexWaypoint;
+    }
+
+    protected virtual void MoveToWaypoint(Transform waypoint)
+    {
+        _navMeshAgent.destination = waypoint.position;
+    }
+
+    protected virtual bool CopmleteWaypoint(float distanceComplete)
+    {
+        if (_waypoints.Length > 0)
         {
-            EnabledIsCinematicAndNavMesAgent(true);
-            _navMeshAgent.enabled = true;
-            _navMeshAgent.destination = _waypoints[0].position;
+            return (Vector3.Distance(transform.position, _waypoints[_currentWaypoint].position) < distanceComplete);
         }
-        else
-        {
-            EnabledIsCinematicAndNavMesAgent(false);
-        }
+        else return false;
 
     }
 
-    void Update()
+    protected virtual void MovementPathWaypoints()
     {
-        if (!isFreeze)
+        if (CopmleteWaypoint(_distanceComplete))
         {
-            EnabledIsCinematicAndNavMesAgent(true);
-            if (Vector3.Distance(transform.position, _waypoints[_currentWaypoint].position) < distanceToChangeGoal)
+            // Смена точки на следующую
+            
+
+            if (_currentWaypoint == _waypoints.Length)
             {
-                // Смена точки на следующую
+                SetCurrentWaypoint(0);
+                MoveToWaypoint(_waypoints[_currentWaypoint]);
+            }
+            else
+            {
                 _currentWaypoint += 1;
-                if (_currentWaypoint == _waypoints.Length) _currentWaypoint = 0;
-                _navMeshAgent.destination = _waypoints[_currentWaypoint].position;
-                
-                Debug.Log(_waypoints[_currentWaypoint].name + " объекта" + gameObject.transform.root.name + " расстояние до точки: " + _navMeshAgent.remainingDistance + " дистанция для завершения: " + distanceToChangeGoal);
+                MoveToWaypoint(_waypoints[_currentWaypoint]);
             }
 
-            if (_navMeshAgent.velocity.magnitude > 0)
-            {
-                _movingCurrent = true;
-            }
-            else _movingCurrent = false;
-
-
-            // Управление вращением колес
-            if (_movingCurrent)
-            {
-                RotateWheel();
-            }
 
         }
-        else
+    }
+
+    public void TurnOnAI()
+    {
+        if (_navMeshAgent != null)
         {
-            EnabledIsCinematicAndNavMesAgent(false);
+            _navMeshAgent.enabled = true;
         }
-        // Проверяем, движется ли автомобиль
+           
+        if (_rb != null)
+        {
+            _rb.isKinematic = true;
+        }
+    }
+
+    public void TurnoOffAi()
+    {
+        if (_navMeshAgent!= null)
+        {
+            _navMeshAgent.enabled = false;
+        }
         
-    }
-
-    public void GetIsFreeze(bool _bool)
-    {
-        isFreeze = _bool;
-    }
-
-    private void RotateWheel()
-    {
-        foreach (Transform wheel in _wheels)
+        if (_rb != null)
         {
-            wheel.Rotate(Vector3.right, _navMeshAgent.speed * Time.deltaTime * _rotationSpeed);
+            _rb.isKinematic = false;
         }
-    }
-
-    private void EnabledIsCinematicAndNavMesAgent(bool _bool)
-    {
-        _navMeshAgent.enabled = _bool;
-        _rb.isKinematic = _bool;
     }
 }

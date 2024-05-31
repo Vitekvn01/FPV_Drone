@@ -1,10 +1,13 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Car : Vehicle
 {
+
+    [SerializeField] private Transform[] _wheels;
     [SerializeField] private List<ParticleSystem> _flames;
 
     private AIController _moveAi;
@@ -25,17 +28,17 @@ public class Car : Vehicle
                 Dead();
             }
         }
-        
+
     }
 
     public override void Dead()
     {
         base.Dead();
         Debug.Log("Car destroy");
-        if (_moveAi != null)
+/*        if (_moveAi != null)
         {
-            _moveAi.GetIsFreeze(true);
-        }
+            _moveAi.SetIsFreeze(true);
+        }*/
         PlayFlame();
         IsAlive = false;
     }
@@ -45,6 +48,14 @@ public class Car : Vehicle
         foreach (ParticleSystem _flame in _flames)
         {
             _flame.Play();
+        }
+    }
+
+    public void WheelsRotate(float speed)
+    {
+        foreach (Transform wheel in _wheels)
+        {
+            wheel.Rotate(Vector3.right, speed * 100);
         }
     }
 

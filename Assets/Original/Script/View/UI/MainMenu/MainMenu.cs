@@ -37,10 +37,11 @@ public class MainMenu : MonoBehaviour
 
     public void CollectionButton()
     {
-        _collectionPanel.SetActive(true);
-        _collectionPanel.GetComponent<CollectionPanel>().StartCollectionButton();
         _settingsPanel.SetActive(false);
         _levelPanel.SetActive(false);
+        _collectionPanel.SetActive(true);
+        _collectionPanel.GetComponent<CollectionPanel>().StartCollectionButton();
+
     }
     public void ExitButton()
     {

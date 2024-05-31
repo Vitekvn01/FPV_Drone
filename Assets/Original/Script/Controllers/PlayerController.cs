@@ -19,7 +19,7 @@ public class PlayerController : SingletonBase<PlayerController>
 
     [SerializeField] private GameObject _respawnPanel;
 
-    public UnityEvent OnOverCountDroneEvent;
+    public static UnityEvent OnOverCountDroneEvent = new UnityEvent();
 
     private void Start()
     {
@@ -49,7 +49,7 @@ public class PlayerController : SingletonBase<PlayerController>
     private void RemoveDroneCount()
     {
         _countDrone -= 1;
-        if (_countDrone <= 0)
+        if (_countDrone < 0)
         {
             OnOverCountDroneEvent.Invoke();
             _countDrone = 0;
@@ -59,16 +59,19 @@ public class PlayerController : SingletonBase<PlayerController>
     public void SpawnDrone()
     {
         _droneSpawner.Spawn();
-        RemoveDroneCount();
+        
     }
 
     public void SetTargetDrone(Drone drone, Camera camera)
     {
+        if (_currentDrone != null)
+        {
+            _currentDrone.OnDestroyEvent.RemoveListener(RemoveDroneCount);
+        }
         _currentDrone = drone;
+        _currentDrone.OnDestroyEvent.AddListener(RemoveDroneCount);
         PlayerInput.Instance.SetTargetDrone(_currentDrone);
         _camera = camera;
         _camera = Camera.main;
     }
-
-
 }

@@ -1,21 +1,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(EffectParticlesPlay))]
+[RequireComponent(typeof(ExplosionSpawn))]
 public class Tank : Vehicle
 {
+    [Header(" оллайдеры у€звимых зон танка")]
+    [SerializeField] private ColliderElement TowerDefeatCollider;
+    [SerializeField] private ColliderElement BortDefeatCollider;
 
-    [SerializeField] private ColliderElement TurretDefeat;
-    [SerializeField] private ColliderElement BortDefeat;
-    [SerializeField] private GameObject _turret;
-    [SerializeField] private GameObject _explosionTurret;
-    [SerializeField] private ParticleSystem _flameTurret;
-    [SerializeField] private List<ParticleSystem> _flames;
+    [Header("—оставные части танка")]
+    [SerializeField] private GameObject _tower;
+    [SerializeField] private SuspensionTank _suspensionTank;
+
+    [Header("Ёффекты")]
+    [SerializeField] private ExplosionSpawn _towertExplosionSpawn; 
+    [SerializeField] private EffectParticlesPlay _flametDefeatTowerPlay;
+    [SerializeField] private EffectParticlesPlay _flameDefeatBortPlay;
     [SerializeField] private int _explosionForce;
 
+    public GameObject Tower => _tower;
 
     private bool dronesAttack = false;
-    
-
     private Rigidbody _rb;
     private AIController _moveAi;
 
@@ -23,10 +29,6 @@ public class Tank : Vehicle
     public override void Dead()
     {
         base.Dead();
-        if (_moveAi != null)
-        {
-            _moveAi.GetIsFreeze(true);
-        }
     }
 
     protected void Start()
@@ -43,15 +45,16 @@ public class Tank : Vehicle
             _timer += 1 * Time.deltaTime;
             if (dronesAttack)
             {
-                if (TurretDefeat.IsDefeat)
+                if (TowerDefeatCollider.IsDefeat)
                 {
-                    ExplosionTurret();
-                    PlayFlame();
+                    _towertExplosionSpawn.Spawn(_tower.transform.position);
+                    _flametDefeatTowerPlay.Play();
+                    DefeatTurret();
                     Dead();
                 }
-                if (BortDefeat.IsDefeat)
+                if (BortDefeatCollider.IsDefeat)
                 {
-                    PlayFlame();
+                    _flameDefeatBortPlay.Play();
                     Dead();
                 }
             }
@@ -69,35 +72,32 @@ public class Tank : Vehicle
         }
     }
 
-    private void ExplosionTurret()
+    private void DefeatTurret()
     {
-        ParticleSystem _explosion = _explosionTurret.GetComponent<ParticleSystem>();
-        _explosion.Play();
         float turretMass = 10000f;
-        _turret.transform.SetParent(null);
-        if (_turret.GetComponent<Rigidbody>() == null)
+        _tower.transform.SetParent(null);
+        if (_tower.GetComponent<Rigidbody>() == null)
         {
-            _turret.AddComponent<Rigidbody>();
+            _tower.AddComponent<Rigidbody>();
         }
-        Rigidbody _rbTurret = _turret.GetComponent<Rigidbody>();
+        Rigidbody _rbTurret = _tower.GetComponent<Rigidbody>();
         _rbTurret.mass = turretMass;
         _rbTurret.AddForce(Vector3.up * _explosionForce * turretMass, ForceMode.Impulse);
         _rbTurret.AddTorque(new Vector3(1, 0, 1) * _explosionForce * turretMass, ForceMode.Impulse);
-        Destroy(_explosionTurret, 1f);
-        _flameTurret.Play();
     }
 
-    private void PlayFlame()
+
+    public void MoveSuspention(float speed)
     {
-        foreach (ParticleSystem _flame in _flames)
-        {
-            _flame.Play();
-        }
+        _suspensionTank.RollerRotate(speed);
+        _suspensionTank.TrackScrolling(speed);
     }
+
+
 
     private void RotateTurret(float x, float y, float z)
     {
-        _turret.transform.Rotate(x, y, z);
+        _tower.transform.Rotate(x, y, z);
         Debug.Log("2");
     }
 }

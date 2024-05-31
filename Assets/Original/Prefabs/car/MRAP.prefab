@@ -537,7 +537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3421093016757847849}
   - component: {fileID: 7012225242304613249}
-  - component: {fileID: 1577853363647155452}
+  - component: {fileID: 5773158640974580459}
   - component: {fileID: 6739631885986510668}
   - component: {fileID: 4145565315755431313}
   m_Layer: 0
@@ -582,10 +582,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   vehicleProperties: {fileID: 11400000, guid: 5d2f9010a847f354696fdb482272a84e, type: 2}
+  _wheels:
+  - {fileID: 7885288972030013566}
+  - {fileID: 4814475099100343343}
+  - {fileID: 8295038297095959365}
+  - {fileID: 7330800308455313753}
   _flames:
   - {fileID: 7982379497535094534}
   - {fileID: 7217328079216356826}
---- !u!114 &1577853363647155452
+--- !u!114 &5773158640974580459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -594,44 +599,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4151038820943670118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7a7565f1bd36aa418b03a633be866c4, type: 3}
+  m_Script: {fileID: 11500000, guid: aa131fa52e0c821498c1d529daf55006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _wheels:
-  - {fileID: 7885288972030013566}
-  - {fileID: 4814475099100343343}
-  - {fileID: 8295038297095959365}
-  - {fileID: 7330800308455313753}
-  _rotationSpeed: 500
-  isFreeze: 0
-  distanceToChangeGoal: 5
+  _waypoints: []
+  _distanceComplete: 1
 --- !u!195 &6739631885986510668
 NavMeshAgent:
   m_ObjectHideFlags: 0

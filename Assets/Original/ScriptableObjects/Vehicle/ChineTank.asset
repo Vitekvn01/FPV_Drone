@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ChineTank
   m_EditorClassIdentifier: 
   VehiclePrefab: {fileID: 4555353931971936174, guid: d5511e01c7c850a499f624b9909e829e, type: 3}
-  Name: 
-  Text: 
+  Name: "\u0435\u0443\u043A\u0435\u043A\u0443\u0435\u043A"
+  Text: "\u0435\u0443\u0435\u043A\u0443\u0435\u043A\u0443"

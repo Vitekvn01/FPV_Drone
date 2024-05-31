@@ -1059,7 +1059,7 @@ GameObject:
   - component: {fileID: 859730406665289872}
   - component: {fileID: 3740354725631274081}
   - component: {fileID: 1009352918590580075}
-  - component: {fileID: 5806575776281071847}
+  - component: {fileID: 338988292496321556}
   - component: {fileID: 1165135532172423655}
   m_Layer: 0
   m_Name: UAZ
@@ -1148,11 +1148,16 @@ MonoBehaviour:
   OnDeadEvent:
     m_PersistentCalls:
       m_Calls: []
-  vehicleProperties: {fileID: 0}
+  vehicleProperties: {fileID: 11400000, guid: 80196b00d7ad84140a92c8ee98206a5c, type: 2}
+  _wheels:
+  - {fileID: 5204180727139611407}
+  - {fileID: 6204250209493020341}
+  - {fileID: 3682118983149398433}
+  - {fileID: 5645069816947859509}
   _flames:
   - {fileID: 4948854934847526502}
   - {fileID: 5234054210871828355}
---- !u!114 &5806575776281071847
+--- !u!114 &338988292496321556
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1161,24 +1166,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9135218002965536996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7a7565f1bd36aa418b03a633be866c4, type: 3}
+  m_Script: {fileID: 11500000, guid: aa131fa52e0c821498c1d529daf55006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _wheels:
-  - {fileID: 5204180727139611407}
-  - {fileID: 6204250209493020341}
-  - {fileID: 3682118983149398433}
-  - {fileID: 5645069816947859509}
-  _rotationSpeed: 200
-  isFreeze: 0
-  distanceToChangeGoal: 1
+  _waypoints: []
+  _distanceComplete: 1
 --- !u!195 &1165135532172423655
 NavMeshAgent:
   m_ObjectHideFlags: 0

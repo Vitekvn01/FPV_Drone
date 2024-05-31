@@ -42,13 +42,13 @@ public class VehicleCollectionController : SingletonBase<VehicleCollectionContro
 
                 foreach (MonoBehaviour script in scripts)
                 {
-                    Destroy(script);
+                    script.enabled = false; 
                 }
             }
             if (_currentVehicle.GetComponent<NavMeshAgent>() != null)
             {
-                NavMeshAgent destroyComponent = _currentVehicle.GetComponent<NavMeshAgent>();
-                Destroy(destroyComponent);
+                NavMeshAgent enabledComponent = _currentVehicle.GetComponent<NavMeshAgent>();
+                enabledComponent.enabled = false;
             }
         }
         else
@@ -74,7 +74,7 @@ public class VehicleCollectionController : SingletonBase<VehicleCollectionContro
         {
             Destroy(_currentVehicle);
         }
-        
+
     }
 
 
@@ -96,5 +96,10 @@ public class VehicleCollectionController : SingletonBase<VehicleCollectionContro
             Destroy(_currentVehicle);
             DrawVehicleCollection();
         }
+    }
+
+    public VehicleProperties GetCurrentVehicleProperties()
+    {
+            return _vehicalCollectionData.Vehicles[index];
     }
 }
