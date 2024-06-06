@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(EffectParticlesPlay))]
-[RequireComponent(typeof(ExplosionSpawn))]
+/*[RequireComponent(typeof(ExplosionSpawn))]*/
 public class Tank : Vehicle
 {
     [Header(" оллайдеры у€звимых зон танка")]
@@ -14,11 +14,16 @@ public class Tank : Vehicle
     [SerializeField] private SuspensionTank _suspensionTank;
 
     [Header("Ёффекты")]
-    [SerializeField] private ExplosionSpawn _towertExplosionSpawn; 
+    [SerializeField] private GameObject _towerExplosion;
+    [SerializeField] private GameObject _bodyDefeatSoundEffect;
+    [SerializeField] private AudioSource _motorSound;
+    [SerializeField] private AudioSource _trackSound;
+
     [SerializeField] private EffectParticlesPlay _flametDefeatTowerPlay;
     [SerializeField] private EffectParticlesPlay _flameDefeatBortPlay;
     [SerializeField] private int _explosionForce;
 
+    private Transform _bodyDefeatPosition;
     public GameObject Tower => _tower;
 
     private bool dronesAttack = false;
@@ -29,10 +34,14 @@ public class Tank : Vehicle
     public override void Dead()
     {
         base.Dead();
+
+        _motorSound.Pause();
+        _trackSound.Pause();
     }
 
     protected void Start()
     {
+        _motorSound.Play();
         _rb = GetComponent<Rigidbody>();
         _rb.mass = 30000f;
         _moveAi = GetComponent<AIController>();
@@ -47,13 +56,14 @@ public class Tank : Vehicle
             {
                 if (TowerDefeatCollider.IsDefeat)
                 {
-                    _towertExplosionSpawn.Spawn(_tower.transform.position);
+                    Instantiate(_towerExplosion, _tower.transform.position, Quaternion.identity );
                     _flametDefeatTowerPlay.Play();
                     DefeatTurret();
                     Dead();
                 }
                 if (BortDefeatCollider.IsDefeat)
                 {
+                    Instantiate(_bodyDefeatSoundEffect, gameObject.transform.position, Quaternion.identity);
                     _flameDefeatBortPlay.Play();
                     Dead();
                 }
@@ -66,9 +76,11 @@ public class Tank : Vehicle
 
     private void OnCollisionEnter(Collision collision)
     {
+/*        _bodyDefeatPosition = collision.gameObject.transform;*/
         if (collision.gameObject.GetComponent<Drone>() != null)
         {
             dronesAttack = true;
+
         }
     }
 
@@ -93,6 +105,16 @@ public class Tank : Vehicle
         _suspensionTank.TrackScrolling(speed);
     }
 
+    private void StopSuspention()
+    {
+        _suspensionTank.RollerRotate(0);
+        _suspensionTank.TrackScrolling(0);
+    }
+
+    public void SuspentionSound()
+    {
+        _trackSound.Play();
+    }
 
 
     private void RotateTurret(float x, float y, float z)

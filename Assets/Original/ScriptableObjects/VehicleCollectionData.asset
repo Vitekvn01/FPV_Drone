@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9156e88c63d7846a8cae3627f2cf9c, type: 3}
   m_Name: VehicleCollectionData
   m_EditorClassIdentifier: 
-  allVehicleCount: []
+  _allVehiclePropirties:
+  - {fileID: 11400000, guid: eb50fd9feaada4d41a848aaa33a278ea, type: 2}
+  - {fileID: 11400000, guid: a4d3360814d4636499ef2ead309bfe74, type: 2}
+  - {fileID: 11400000, guid: ac7fce15146a1d146a0d9d5fdc505b80, type: 2}
+  - {fileID: 11400000, guid: f84ee1033d03caf43ae4c2465b940241, type: 2}
+  - {fileID: 11400000, guid: 5d2f9010a847f354696fdb482272a84e, type: 2}
+  - {fileID: 11400000, guid: 40c99a5671160044facbba44cdad23f7, type: 2}
+  - {fileID: 11400000, guid: 77ec8ed6a109db64e8febd0df804e683, type: 2}
+  - {fileID: 11400000, guid: 80196b00d7ad84140a92c8ee98206a5c, type: 2}
   _vehicles: []
   _vehiclesPropertiesData: []

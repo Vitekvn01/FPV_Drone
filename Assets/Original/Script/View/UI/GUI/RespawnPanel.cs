@@ -6,10 +6,11 @@ using UnityEngine;
 public class RespawnPanel : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _countText;
-
+    [SerializeField] private TextMeshProUGUI _countEnemyText;
     private void Update()
     {
-        _countText.text = "Count: " + PlayerController.Instance.CountDrone.ToString();
+        _countText.text = "Count:" + PlayerController.Instance.CountDrone.ToString();
+        _countEnemyText.text = "Enemies:" + Enemy.ListEnemies.Count.ToString();
     }
     public void RespawnButton()
     {

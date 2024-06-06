@@ -9,10 +9,11 @@ public class VehicalCollectionData : ScriptableObject
 {
     const string filename = "VehicalCollection.dat";
 
-    [SerializeField] private VehicleProperties[] allVehicleCount;
+    private static Dictionary<int, VehicleProperties> _dictionaryVehicleProperties = new Dictionary<int, VehicleProperties>();
+
+    [SerializeField] private VehicleProperties[] _allVehiclePropirties;
 
     [SerializeField] private List<VehicleProperties> _vehicles = new List<VehicleProperties>();
-
     public List<VehicleProperties> Vehicles => _vehicles;
 
     [SerializeField] private List<VehiclePropertiesDataContainer> _vehiclesPropertiesData = new List<VehiclePropertiesDataContainer>();
@@ -28,9 +29,17 @@ public class VehicalCollectionData : ScriptableObject
     [Serializable]
     public class VehiclePropertiesDataContainer
     {
-        public VehicleProperties VehicleProperties;
+        public int VehiclePropertiesID;
 
         // Добавьте сюда остальные поля из VehicleProperties
+    }
+
+    public void FillVehiclePropertiesDictionary()
+    {
+        foreach (VehicleProperties vehicleProperties in _allVehiclePropirties)
+        {
+            _dictionaryVehicleProperties[vehicleProperties.ID] = vehicleProperties;
+        }
     }
 
     public void AddVehicleInList(VehicleProperties vehicle)
@@ -45,10 +54,10 @@ public class VehicalCollectionData : ScriptableObject
     {
         foreach (var vehicleData in _vehiclesPropertiesData)
         {
-            VehicleProperties vehicle = CreateInstance<VehicleProperties>();
-            vehicle = vehicleData.VehicleProperties;
-
-            AddVehicleInList(vehicle);
+            if (_dictionaryVehicleProperties.TryGetValue(vehicleData.VehiclePropertiesID, out VehicleProperties vehicle))
+            {
+                AddVehicleInList(vehicle);
+            }
         }
     }
 
@@ -61,10 +70,8 @@ public class VehicalCollectionData : ScriptableObject
     {
         VehiclePropertiesDataContainer data = new VehiclePropertiesDataContainer()
         {
-            VehicleProperties = vehicle
+            VehiclePropertiesID = vehicle.ID
         };
-        // Скопируйте остальные поля из vehicle
-
         return data;
     }
 
@@ -74,7 +81,7 @@ public class VehicalCollectionData : ScriptableObject
     /// <param name="data"></param>
     private void AddVehiclePropertiesContainerInListContainer(VehiclePropertiesDataContainer data)
     {
-        if (!_vehiclesPropertiesData.Exists(x => x.VehicleProperties == data.VehicleProperties))
+        if (!_vehiclesPropertiesData.Exists(x => x.VehiclePropertiesID == data.VehiclePropertiesID))
         {
             _vehiclesPropertiesData.Add(data);
         }
@@ -97,7 +104,6 @@ public class VehicalCollectionData : ScriptableObject
     public void SaveToFile()
     {
         SetVehiclePropiertyListInContainer();
-        Debug.Log("Save");
         string filePath = Path.Combine(Application.persistentDataPath, filename);/// 1. Получение пути к файлу:
 
         // Создаем экземпляр LevelDataContainer и сохраняем в него массив _levels

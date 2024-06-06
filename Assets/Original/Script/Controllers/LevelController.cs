@@ -20,14 +20,16 @@ public class LevelController : SingletonBase<LevelController>
     }
     private void Start()
     {
+        Debug.Log(LevelData.CurrentLevel);
         Time.timeScale = 1;
-        if (LevelComplete.OnCompleteLevelEvent != null)
+        if (LevelCondition.OnCompleteLevelEvent != null)
         {
-            LevelComplete.OnCompleteLevelEvent.AddListener(LevelPassed);
+            LevelCondition.OnCompleteLevelEvent.AddListener(LevelPassed);
+            Debug.Log("subsriptingEvent");
         }
-        if (PlayerController.OnOverCountDroneEvent != null)
+        if (LevelCondition.OnFailedLevelEvent != null)
         {
-            PlayerController.OnOverCountDroneEvent.AddListener(LevelLose);
+            LevelCondition.OnFailedLevelEvent.AddListener(LevelLose);
         }
         
     }

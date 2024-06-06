@@ -13,6 +13,7 @@ public class VehicleCollectionController : SingletonBase<VehicleCollectionContro
     // Start is called before the first frame update
     void Start()
     {
+        _vehicalCollectionData.FillVehiclePropertiesDictionary();
         VehicalCollectionData.LoadFromFile(_vehicalCollectionData);
     }
 

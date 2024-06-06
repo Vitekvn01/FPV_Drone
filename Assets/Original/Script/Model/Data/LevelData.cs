@@ -18,7 +18,7 @@ public class LevelData : ScriptableObject
 
     public LevelProperties[] Levels => _levels;
 
-    public void SetCurrentLevel(LevelProperties level)
+    public static void SetCurrentLevel(LevelProperties level)
     {
         _currentLevel = level;
     }
@@ -27,6 +27,7 @@ public class LevelData : ScriptableObject
     {
         for (int i = 0; i < _levels.Length; i++)
         {
+            Debug.Log(_levels[i] + " " + _currentLevel);
             if (_levels[i] == _currentLevel)
             {
                 if (_levels[i + 1].LevelLock)

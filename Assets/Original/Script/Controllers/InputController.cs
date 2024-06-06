@@ -21,10 +21,13 @@ public class PlayerInput : SingletonBase<PlayerInput>
     [SerializeField] private PointerClickHold _downClickHold;
     [SerializeField] private VirtualJoystick _mobilelJoystickRight;
     [SerializeField] private VirtualJoystick _mobilelJoystickLeft;
+    [SerializeField] private float _drugAracade = 0.6f;
+    [SerializeField] private float _drugSimulator = 0.2f;
 
     [SerializeField] private InputSettings _inputSettings;
     [SerializeField] private InputMode _inputMode;
     [SerializeField] private DroneType _droneType;
+
 
     private MovementType _movementType => _inputSettings.MovementType;
     private bool _inversionJoystick => _inputSettings.OnInversionJoystick;
@@ -41,6 +44,12 @@ public class PlayerInput : SingletonBase<PlayerInput>
     Vector3 torque;
     Vector3 heightForce;
     Vector3 rotation;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _inputSettings.LoadInputSettings();
+    }
 
     void FixedUpdate()
     {
@@ -109,13 +118,13 @@ public class PlayerInput : SingletonBase<PlayerInput>
 
         if (_movementType == MovementType.Arcade)
         {
-            _drone.SetDrugRigidbody(0.3f);
-            _drone.SetForceDirVectorZ(heightForce, SensitiveJoystick);
+            _drone.SetDrugRigidbody(_drugAracade);
+            _drone.SetForceDirVectorZ(heightForce/ _drugAracade, SensitiveJoystick);
         }
         if (_movementType == MovementType.Simulator)
         {
-            _drone.SetDrugRigidbody(0.1f);
-            _drone.SetForceDirVectorY(heightForce, SensitiveJoystick);
+            _drone.SetDrugRigidbody(_drugSimulator);
+            _drone.SetForceDirVectorY(heightForce/(_drugSimulator*2), SensitiveJoystick);
         }
     }
 

@@ -2,8 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Rigidbody))]
-public class Drone : MonoBehaviour
+public class Drone : Destructible
 {
     [SerializeField] DroneType _droneType;
     public DroneType DroneType => _droneType;
@@ -15,8 +16,13 @@ public class Drone : MonoBehaviour
     [SerializeField] protected int forceTilt;
     [SerializeField] protected int forceRotate;
 
+    [Header("Ёффекты")]
     [SerializeField] private List<GameObject> helixList;
+    [SerializeField] protected AudioSource _helixSound;
 
+
+
+    private bool isTraction = false;
     private float _currentSpeed;
     private float _currentHeight;
 
@@ -31,14 +37,18 @@ public class Drone : MonoBehaviour
     public UnityEvent OnDestroyEvent;
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject, 0);
+        Debug.Log(collision.gameObject.name);
+        Dead();
     }
 
 
 
     protected virtual void Start()
     {
+        OnDeadEvent.AddListener(OnDestroyEvent.Invoke);
         rb = GetComponent<Rigidbody>();
+        _helixSound.loop = true;
+        _helixSound.spatialBlend = 1;
     }
     protected virtual void FixedUpdate()
     {
@@ -53,6 +63,8 @@ public class Drone : MonoBehaviour
         Hovering();
 
         RotateHelix();
+
+        TractionSoundEffect();
 
     }
 
@@ -115,7 +127,22 @@ public class Drone : MonoBehaviour
                 helix.transform.Rotate(Vector3.forward * forceTraction, Space.Self);
             }
         }
+    }
 
+    protected virtual void TractionSoundEffect()
+    {
+        if (tractionDir.z != 0 || tractionDir.z != 0)
+        {
+            _helixSound.volume = 0.75f;
+            _helixSound.pitch = 1.10f;
+        }
+        else
+        {
+            _helixSound.volume = 0.60f;
+            _helixSound.pitch = 1;
+        }
+            
+            
     }
 
     #region API
@@ -138,7 +165,7 @@ public class Drone : MonoBehaviour
     public void SetDirRotation(Vector3 Value, float Sensitive)
     {
         rotationDir.x = Value.x * Sensitive;
-        rotationDir.y = - Value.y * Sensitive;
+        rotationDir.y = -Value.y * Sensitive;
     }
 
     public void SetDrugRigidbody(float Drag)
@@ -158,8 +185,9 @@ public class Drone : MonoBehaviour
 
     #endregion
 
-    private void OnDestroy()
+    public override void Dead()
     {
-        OnDestroyEvent.Invoke();
+        base.Dead();
+        Destroy(gameObject);
     }
 }

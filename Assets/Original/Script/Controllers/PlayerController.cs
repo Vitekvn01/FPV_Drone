@@ -15,7 +15,7 @@ public class PlayerController : SingletonBase<PlayerController>
 
     [SerializeField] private Camera _cameraScout;
 
-    [SerializeField] private Drone _droneScout; // временно
+    [SerializeField] private ScoutDrone _droneScout; // временно
 
     [SerializeField] private GameObject _respawnPanel;
 
@@ -36,6 +36,8 @@ public class PlayerController : SingletonBase<PlayerController>
             _droneScout.gameObject.SetActive(false);
             /* _cameraScout.gameObject.SetActive(false);*/
             _respawnPanel.SetActive(false);
+            _droneScout.transform.LookAt(_currentDrone.transform);
+            _droneScout.SetZOOM(5);
         }
         else
         {
@@ -49,7 +51,7 @@ public class PlayerController : SingletonBase<PlayerController>
     private void RemoveDroneCount()
     {
         _countDrone -= 1;
-        if (_countDrone < 0)
+        if (_countDrone <= 0)
         {
             OnOverCountDroneEvent.Invoke();
             _countDrone = 0;
@@ -59,17 +61,21 @@ public class PlayerController : SingletonBase<PlayerController>
     public void SpawnDrone()
     {
         _droneSpawner.Spawn();
-        
+    }
+
+    public void DeadDrone()
+    {
+        _currentDrone.Dead();
     }
 
     public void SetTargetDrone(Drone drone, Camera camera)
     {
         if (_currentDrone != null)
         {
-            _currentDrone.OnDestroyEvent.RemoveListener(RemoveDroneCount);
+            _currentDrone.OnDeadEvent.RemoveListener(RemoveDroneCount);
         }
         _currentDrone = drone;
-        _currentDrone.OnDestroyEvent.AddListener(RemoveDroneCount);
+        _currentDrone.OnDeadEvent.AddListener(RemoveDroneCount);
         PlayerInput.Instance.SetTargetDrone(_currentDrone);
         _camera = camera;
         _camera = Camera.main;

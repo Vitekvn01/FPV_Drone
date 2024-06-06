@@ -20,9 +20,9 @@ public class LevelSelectionButton : MonoBehaviour
 
     public void LoadLevel()
     {   
-        if (_levelProperties != null && _levelProperties.LevelLock != true)
+        if (_levelProperties.LevelLock != true)
         {
-            LevelController.Instance.LevelSystem.SetCurrentLevel(_levelProperties);
+            LevelData.SetCurrentLevel(_levelProperties);
             SceneManager.LoadScene(_levelProperties.SceneName);
             
         }

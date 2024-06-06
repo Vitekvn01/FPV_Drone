@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class AIController : MonoBehaviour
@@ -72,22 +73,24 @@ public class AIController : MonoBehaviour
         if (CopmleteWaypoint(_distanceComplete))
         {
             // Смена точки на следующую
-            
 
-            if (_currentWaypoint == _waypoints.Length)
+
+            // Смена точки на следующую
+            if (_currentWaypoint < _waypoints.Length - 1)
             {
-                SetCurrentWaypoint(0);
+                _currentWaypoint++;
                 MoveToWaypoint(_waypoints[_currentWaypoint]);
             }
             else
             {
-                _currentWaypoint += 1;
+                // Если мы достигли конца массива _waypoints,
+                // то возвращаемся в начало
+                _currentWaypoint = 0;
                 MoveToWaypoint(_waypoints[_currentWaypoint]);
             }
-
-
         }
     }
+    
 
     public void TurnOnAI()
     {

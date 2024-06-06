@@ -5,9 +5,9 @@ using UnityEngine.Events;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _spawnPrefab;
+    [SerializeField] protected GameObject _spawnPrefab;
 
-    [SerializeField] private Transform _spawnPosition;
+    [SerializeField] protected Transform _spawnPosition;
 
     protected GameObject spawnObject;
 

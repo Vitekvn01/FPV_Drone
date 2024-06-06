@@ -6,6 +6,11 @@ using UnityEngine;
 [System.Serializable]
 public class VehicleProperties : ScriptableObject
 {
+     // Статическое поле для генерации ID
+
+    public int ID;
+
+
     public GameObject VehiclePrefab;
 
     public string Name;

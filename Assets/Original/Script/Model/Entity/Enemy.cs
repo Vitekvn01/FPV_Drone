@@ -10,6 +10,11 @@ public class Enemy : MonoBehaviour
     public static List<Enemy> ListEnemies => _listEnemies;
 
     private Destructible _dest;
+
+    private void Awake()
+    {
+
+    }
     private void Start()
     {
         AddListEnemies();
@@ -17,6 +22,8 @@ public class Enemy : MonoBehaviour
         _dest = GetComponent<Destructible>();
 
         _dest.OnDeadEvent.AddListener(RemoveListEnemies);
+
+        _dest.OnDestroyEntityEvent.AddListener(RemoveListEnemies);
     }
 
     private void AddListEnemies()

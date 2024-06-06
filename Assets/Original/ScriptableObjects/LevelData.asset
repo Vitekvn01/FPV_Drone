@@ -15,5 +15,4 @@ MonoBehaviour:
   _levels:
   - {fileID: 11400000, guid: c1a99776b7dafa542a757fe0b830d992, type: 2}
   - {fileID: 11400000, guid: 131831ced95eba044bf89ef070b755a9, type: 2}
-  - {fileID: 11400000, guid: 22d5a566defbe6b4385b9f56e7157ae9, type: 2}
   _countLevelUnlock: 1

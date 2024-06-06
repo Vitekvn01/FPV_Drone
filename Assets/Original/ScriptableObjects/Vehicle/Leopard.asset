@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0dcecc913d2f943b4bf1e3b0b5ea00, type: 3}
   m_Name: Leopard
   m_EditorClassIdentifier: 
+  ID: 4
   VehiclePrefab: {fileID: 8616634655837090054, guid: dfddc8aa61e12fd41b3a90966eb7c7a8, type: 3}
   Name: ewrewr
   Text: 3wwegerg

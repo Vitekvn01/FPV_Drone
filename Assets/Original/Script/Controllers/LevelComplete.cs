@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class LevelComplete : MonoBehaviour
+public class LevelComplete : LevelCondition
 {
-
-    public static UnityEvent OnCompleteLevelEvent = new UnityEvent();
+    
     void Update()
     {
         if (Enemy.ListEnemies.Count <= 0)

@@ -21,6 +21,7 @@ public class AITank : AIController
         base.GetInStart();
         _tank = GetComponent<Tank>();
         _tank.GetComponent<Destructible>().OnDeadEvent.AddListener(TurnoOffAi);
+        _tank.SuspentionSound();
     }
 
     protected override void MovementPathWaypoints()

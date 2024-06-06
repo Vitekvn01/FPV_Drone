@@ -6,6 +6,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject _levelPanel;
     [SerializeField] private GameObject _settingsPanel;
     [SerializeField] private GameObject _collectionPanel;
+    [SerializeField] private GameObject _inputSettingsPanel;
+    [SerializeField] private GameObject _audioSettingsPanel;
 
     private int levelIndex;
     void Start()
@@ -23,7 +25,10 @@ public class MainMenu : MonoBehaviour
     }
     public void SettingsButton()
     {
+
         _settingsPanel.SetActive(true);
+        _inputSettingsPanel.SetActive(true);
+        _audioSettingsPanel.SetActive(true);
         _levelPanel.SetActive(false);
         _collectionPanel.SetActive(false);
     }
