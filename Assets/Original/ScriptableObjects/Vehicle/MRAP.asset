@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 5
   VehiclePrefab: {fileID: 4151038820943670118, guid: 769ee1dc86a890949927c3881273e8d1, type: 3}
-  Name: 
-  Text: 
+  Name: Tigr

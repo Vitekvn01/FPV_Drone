@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 6
   VehiclePrefab: {fileID: 1612006592853808427, guid: f0e2c5712fffdfa429117b8ad793c2d1, type: 3}
-  Name: 
-  Text: 
+  Name: MSTA-S

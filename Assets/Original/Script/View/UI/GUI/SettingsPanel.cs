@@ -15,9 +15,11 @@ public class SettingsPanel : MonoBehaviour
 
     private void Start()
     {
+        _inputSettingsPanel.SetActive(false);
+        _audioSettingsPanel.SetActive(false);
         gameObject.SetActive(false);
-        _textInputSettingsButton.text = "Настройки управления";
-        _textAudioSettingsButton.text = "Настройки звука";
+        _textInputSettingsButton.text = LocalizationData.DictionaryLocalizationWords["Control settings"];
+        _textAudioSettingsButton.text = LocalizationData.DictionaryLocalizationWords["Sound settings"];
     }
 
     public void InputSettingsButton()

@@ -6,7 +6,7 @@ public class LevelPunel : MonoBehaviour
 
     [SerializeField] private LevelData _levelData;
 
-    void Awake()
+    void Start()
     {
         gameObject.SetActive(false);
         for (int i = 0; i < _levelData.Levels.Length; i++)

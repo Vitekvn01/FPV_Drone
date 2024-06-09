@@ -13,14 +13,11 @@ public class Prologue : MonoBehaviour
     [SerializeField] private GameObject panelPrlogue;
 
     [SerializeField] private List<Sprite> sprites = new List<Sprite>();
-    [SerializeField] private List<string> strings = new List<string>();
-    /*    [SerializeField] private List<AudioClip> audioClip = new List<AudioClip>();*/
+    [SerializeField] private List<string> stringTask_ID = new List<string>();
 
-    /*    private AudioSource audioSource;*/
     [SerializeField] private Image Image;
     [SerializeField] private TextMeshProUGUI text;
-    /*
-        [SerializeField] private AudioMixer audioMixerMusic;*/
+
 
     [SerializeField] private UnityEvent EndPrologue;
 
@@ -29,12 +26,11 @@ public class Prologue : MonoBehaviour
     private void Start()
     {
         panelPrlogue.SetActive(false);
-        /*        audioSource = GetComponent<AudioSource>();*/
+
         if (playStart)
         {
             panelPrlogue.SetActive(true);
             DrawAndPlay();
-            /*            audioMixerMusic.SetFloat("MasterVolume", -25);*/
         }
     }
 
@@ -42,12 +38,7 @@ public class Prologue : MonoBehaviour
     {
         Time.timeScale = 0f;
         Image.sprite = sprites[index];
-        text.text = strings[index];
-        /*        if (audioClip[index] != null)
-                {
-                    audioSource.clip = audioClip[index];
-                    audioSource.Play();
-                }*/
+        text.text = LocalizationData.DictionaryLocalizationWords[stringTask_ID[index].ToString()];
 
     }
     public void NextPage()
@@ -61,7 +52,6 @@ public class Prologue : MonoBehaviour
         {
             Time.timeScale = 1f;
             panelPrlogue.SetActive(false);
-            /*            audioMixerMusic.SetFloat("MasterVolume", -10);*/
             EndPrologue.Invoke();
             gameObject.SetActive(false);
         }
@@ -72,6 +62,5 @@ public class Prologue : MonoBehaviour
         index = 0;
         panelPrlogue.SetActive(true);
         DrawAndPlay();
-        /*        audioMixerMusic.SetFloat("MasterVolume", -25);*/
     }
 }

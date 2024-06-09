@@ -23,9 +23,8 @@ public class AudioController : SingletonBase<AudioController>
         _audioSource.Play();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        Destroy(gameObject);
     }
 }

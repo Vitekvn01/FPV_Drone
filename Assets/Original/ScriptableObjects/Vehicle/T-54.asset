@@ -10,11 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f0dcecc913d2f943b4bf1e3b0b5ea00, type: 3}
-  m_Name: ChineTank
+  m_Name: T-54
   m_EditorClassIdentifier: 
   ID: 2
   VehiclePrefab: {fileID: 4555353931971936174, guid: d5511e01c7c850a499f624b9909e829e, type: 3}
-  Name: "\u0423\u0440\u043E\u0434\u0435\u0446"
-  Text: "\u0422\u0430\u043D\u043A \u0431\u043E\u0435\u0432\u0438\u043A\u043E\u0432
-    \u043A\u0443\u0441\u0442\u0430\u0440\u043D\u043E\u0433\u043E \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0430
-    \u043D\u0430 \u0431\u0430\u0437\u0435 \u0422-54 "
+  Name: T-54

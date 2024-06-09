@@ -7,10 +7,12 @@ public class LevelSelectionButton : MonoBehaviour
 {
     private LevelProperties _levelProperties;
     [SerializeField] private TextMeshProUGUI _levelTitle;
+    [SerializeField] private TextMeshProUGUI _selectButtonText;
     [SerializeField] private Image _previewImage;
     [SerializeField] private Image _levelLockIcon;
     private void Start()
     {
+        _selectButtonText.text = LocalizationData.DictionaryLocalizationWords["Select"];
         _levelLockIcon.gameObject.SetActive(false);
         if (_levelProperties.LevelLock == true)
         {
@@ -19,12 +21,19 @@ public class LevelSelectionButton : MonoBehaviour
     }
 
     public void LoadLevel()
-    {   
+    {
         if (_levelProperties.LevelLock != true)
         {
-            LevelData.SetCurrentLevel(_levelProperties);
-            SceneManager.LoadScene(_levelProperties.SceneName);
-            
+            if ((PlayerPrefs.GetInt("FirstStartPlaySettings", 0) == 0))
+            {
+                UIController.Instance.FirstStartSettingsSetActive();
+            }
+            else
+            {
+                LevelData.SetCurrentLevel(_levelProperties);
+                SceneManager.LoadScene(_levelProperties.SceneName);
+            }
+   
         }
     }
 
@@ -32,7 +41,7 @@ public class LevelSelectionButton : MonoBehaviour
     {
         _levelProperties = levelProperties;
         _previewImage.sprite = _levelProperties.PreviewImage;
-        _levelTitle.text = _levelProperties.Title;
+        _levelTitle.text = LocalizationData.DictionaryLocalizationWords[_levelProperties.Title.ToString()];
     }
 }
 

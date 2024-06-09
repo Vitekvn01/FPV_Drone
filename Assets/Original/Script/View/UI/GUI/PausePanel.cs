@@ -1,12 +1,21 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PausePanel : MonoBehaviour
 {
     [SerializeField] private GameObject settingsPanel;
+    [SerializeField] private GameObject _continueButton;
+    [SerializeField] private GameObject _restartButton;
+    [SerializeField] private GameObject _settingsButton;
+    [SerializeField] private GameObject _exitButton;
 
     private void Start()
     {
+        _continueButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Continue"];
+        _settingsButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Settings"];
+        _restartButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Restart"];
+        _exitButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Exit"];
         gameObject.SetActive(false);
     }
 

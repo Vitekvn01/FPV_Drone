@@ -1,13 +1,14 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InputSettingsPanel : MonoBehaviour
 {
-    /*[SerializeField] private AudioMixer am;*/
-
+    [SerializeField] private TextMeshProUGUI _settingInfoMovementText;
     [SerializeField] private TextMeshProUGUI _settingMovementText;
 
+    [SerializeField] private TextMeshProUGUI _settingInfoInversionText;
     [SerializeField] private TextMeshProUGUI _settingInversionText;
 
     [SerializeField] private TextMeshProUGUI _settingSensetiveText;
@@ -16,33 +17,33 @@ public class InputSettingsPanel : MonoBehaviour
 
     [SerializeField] private InputSettings _inputSettings;
 
+    private string _string;
+
     private void Start()
     {
-        gameObject.SetActive(false);
-        _settingMovementText.text = "Режим управления: " + _inputSettings.MovementType.ToString();
-        _settingInversionText.text = "Инверсия наклона: " + _inputSettings.OnInversionJoystick.ToString();
-        _settingSensetiveText.text = "Чувствительность ввода";
-        _slider.value = PlayerPrefs.GetInt("sensitivejoystick", 8);
+        _settingInfoMovementText.text = LocalizationData.DictionaryLocalizationWords["Control mode"];
+        _settingMovementText.text = LocalizationData.DictionaryLocalizationWords[_inputSettings.MovementType.ToString()]; ;
+
+        _settingInfoInversionText.text = LocalizationData.DictionaryLocalizationWords["Tilt inversion"];
+        _settingInversionText.text = _inputSettings.OnInversionJoystick.ToString();
+
+        _settingSensetiveText.text = LocalizationData.DictionaryLocalizationWords["Input sensitivity"];
+        _slider.value = PlayerPrefs.GetFloat("sensitivejoystick", 8);
     }
 
 
     public void SelectMovementType()
     {
         _inputSettings.SettingMovementType();
-        _settingMovementText.text = "Режим управления: " + _inputSettings.MovementType.ToString();
+        _settingMovementText.text = LocalizationData.DictionaryLocalizationWords[_inputSettings.MovementType.ToString()];
         Debug.Log(_inputSettings.MovementType);
     }
 
     public void SelectInversionJoystick()
     {
         _inputSettings.SettingInversionJoystick();
-        _settingInversionText.text = "Инверсия наклона: " + _inputSettings.OnInversionJoystick.ToString();
+        _settingInversionText.text = _inputSettings.OnInversionJoystick.ToString();
     }
-
-    /*    public void AudioVolume(float sliderValue)
-        {
-            am.SetFloat("MasterVolume", sliderValue);
-        }*/
 
     public void SelectSensetiveJoystick()
     {

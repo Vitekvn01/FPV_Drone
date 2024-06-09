@@ -304,8 +304,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelTitle: {fileID: 1723863685558564374}
+  _selectButtonText: {fileID: 1405943532178861030}
   _previewImage: {fileID: 1496909746684628422}
   _levelLockIcon: {fileID: 6229149138374956609}
+  _inputSett: {fileID: 0}
 --- !u!1 &7814678083953629272
 GameObject:
   m_ObjectHideFlags: 0

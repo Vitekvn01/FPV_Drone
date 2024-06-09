@@ -1,49 +1,68 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [Header("Panels")]
     [SerializeField] private GameObject _levelPanel;
     [SerializeField] private GameObject _settingsPanel;
     [SerializeField] private GameObject _collectionPanel;
     [SerializeField] private GameObject _inputSettingsPanel;
     [SerializeField] private GameObject _audioSettingsPanel;
 
+    [Header("Buttons")]
+    [SerializeField] private GameObject _playButton;
+    [SerializeField] private GameObject _levelButton;
+    [SerializeField] private GameObject _settingsButton;
+    [SerializeField] private GameObject _collectionButton;
+    [SerializeField] private GameObject _exitButton;
+
+
     private int levelIndex;
     void Start()
     {
+        _levelButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Levels"];
+        _playButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Play"];
+        _collectionButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Collection"];
+        _settingsButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Settings"];
+        _exitButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Exit"];
         levelIndex = 0;
+        PlayerPrefs.SetInt("FirstStartPlaySettings", 0);
     }
 
     public void PlayButton()
     {
-        if (LevelData.CurrentLevel != null)
+        if ((PlayerPrefs.GetInt("FirstStartPlaySettings", 0) == 0))
         {
-            SceneManager.LoadScene(LevelData.CurrentLevel.SceneName);
+            AllPanelSetActiveFalse();
+            UIController.Instance.FirstStartSettingsSetActive();
         }
-        else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        else
+        {
+            LevelData.SetCurrentLevel(LevelController.Instance.LevelData.Levels[LevelController.Instance.LevelData.LastUnlockLevel]);
+            Debug.Log(LevelData.CurrentLevel);
+            SceneManager.LoadScene(LevelController.Instance.LevelData.LastUnlockLevel + 1); // массив сцен больше чем массив левелс потому что меню под индексом 0 в нём 
+        }
+
     }
     public void SettingsButton()
     {
-
+        AllPanelSetActiveFalse();
         _settingsPanel.SetActive(true);
         _inputSettingsPanel.SetActive(true);
         _audioSettingsPanel.SetActive(true);
-        _levelPanel.SetActive(false);
-        _collectionPanel.SetActive(false);
     }
 
     public void LevelButton()
     {
+        AllPanelSetActiveFalse();
         _levelPanel.SetActive(true);
-        _settingsPanel.SetActive(false);
-        _collectionPanel.SetActive(false);
     }
 
     public void CollectionButton()
     {
-        _settingsPanel.SetActive(false);
-        _levelPanel.SetActive(false);
+        AllPanelSetActiveFalse();
         _collectionPanel.SetActive(true);
         _collectionPanel.GetComponent<CollectionPanel>().StartCollectionButton();
 
@@ -51,6 +70,15 @@ public class MainMenu : MonoBehaviour
     public void ExitButton()
     {
         Application.Quit();
+    }
+
+    public void AllPanelSetActiveFalse()
+    {
+        _settingsPanel.SetActive(false);
+        _inputSettingsPanel.SetActive(false);
+        _audioSettingsPanel.SetActive(false);
+        _levelPanel.SetActive(false);
+        _collectionPanel.SetActive(false);
     }
 
 

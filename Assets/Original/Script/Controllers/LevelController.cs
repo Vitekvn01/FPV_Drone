@@ -7,7 +7,7 @@ public class LevelController : SingletonBase<LevelController>
 {
     [SerializeField] private LevelData _levelData;
 
-    public LevelData LevelSystem => _levelData;
+    public LevelData LevelData => _levelData;
 
     public static UnityEvent OnLevelPassedEvent = new UnityEvent();
 
@@ -20,6 +20,7 @@ public class LevelController : SingletonBase<LevelController>
     }
     private void Start()
     {
+        
         Debug.Log(LevelData.CurrentLevel);
         Time.timeScale = 1;
         if (LevelCondition.OnCompleteLevelEvent != null)

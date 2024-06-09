@@ -14,6 +14,4 @@ public class VehicleProperties : ScriptableObject
     public GameObject VehiclePrefab;
 
     public string Name;
-
-    public string Text;
 }

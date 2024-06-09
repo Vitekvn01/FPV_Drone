@@ -6,13 +6,16 @@ using UnityEngine.Audio;
 public class AudioSettingsPanel : MonoBehaviour
 {
     [SerializeField] private Slider _sliderMusicValue;
+    [SerializeField] private TextMeshProUGUI _textMusicValue;
 
     [SerializeField] private Slider _sliderEffectValue;
+    [SerializeField] private TextMeshProUGUI _textEffectValue;
 
     [SerializeField] private AudioSettings _audioSettings;
     void Start()
     {
-        gameObject.SetActive(false);
+        _textMusicValue.text = LocalizationData.DictionaryLocalizationWords["Music volume"];
+        _textEffectValue.text = LocalizationData.DictionaryLocalizationWords["Effects volume"];
         _sliderMusicValue.minValue = -80;
         _sliderMusicValue.maxValue = 20;
         _sliderMusicValue.value = PlayerPrefs.GetFloat("MusicVolume", 0);

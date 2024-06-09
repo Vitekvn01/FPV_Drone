@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d777d1f81d9245546bf21d36b7c21d56, type: 3}
   m_Name: RoadLong
   m_EditorClassIdentifier: 
-  _title: "\u041E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u041A\u043E\u043B\u043E\u043D\u043D\u0443"
+  _title: Stop the column
   _sceneName: RoadLong
   _previewImage: {fileID: 21300000, guid: 36c472f1c0e2cf24593bb158a6747ae7, type: 3}
   _levelLock: 1

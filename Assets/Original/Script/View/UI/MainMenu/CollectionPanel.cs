@@ -21,13 +21,13 @@ public class CollectionPanel : MonoBehaviour
         if (_vehicalCollectionData.Vehicles.Count != 0 && _vehicalCollectionData.Vehicles != null)
         {
             _nameText.text = VehicleCollectionController.Instance.GetCurrentVehicleProperties().Name.ToString();
-            _infoText.text = VehicleCollectionController.Instance.GetCurrentVehicleProperties().Text.ToString();
+            _infoText.text = LocalizationData.DictionaryLocalizationWords[VehicleCollectionController.Instance.GetCurrentVehicleProperties().Name];
             
         }
         else
         {
             _nameText.text = "--------";
-            _infoText.text = "”ничтожайте вражeскую технику, что бы открыть трофеи";
+            _infoText.text = LocalizationData.DictionaryLocalizationWords["Info Collection Panel"];
         }
     }
 

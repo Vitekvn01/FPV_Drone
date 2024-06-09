@@ -337,6 +337,68 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_text
+      value: 'Task: Destroy 3 tanks and an unarmored vehicle. Enemy tanks are outdated
+        and easily destroyed in any unit, but some of them are reinforced with anti-drone
+        grilles.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7646390b77643bf4ea78b366180777fb, type: 2}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3394437388286987473, guid: 7646390b77643bf4ea78b366180777fb, type: 2}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_enableVertexGradient
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8314443172464386015, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

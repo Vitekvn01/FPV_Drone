@@ -17,7 +17,7 @@ public class InputSettings : ScriptableObject
     private bool _onInversionJoystick = false;
     public bool OnInversionJoystick => _onInversionJoystick;
 
-    private float _sensitiveJoystick = 8;
+    private float _sensitiveJoystick;
     public float SensitiveJoystick => _sensitiveJoystick;
 
     public void LoadInputSettings()
@@ -25,7 +25,8 @@ public class InputSettings : ScriptableObject
         if (PlayerPrefs.GetInt("MovementType", 0) == 0)
         {
             movementType = MovementType.Arcade;
-        } else movementType = MovementType.Simulator;
+        }
+        else movementType = MovementType.Simulator;
 
         if (PlayerPrefs.GetInt("InversionJoystick", 1) == 0)
         {
@@ -71,5 +72,10 @@ public class InputSettings : ScriptableObject
         _sensitiveJoystick = Value;
         PlayerPrefs.SetFloat("sensitivejoystick", Value);
         Debug.Log(_sensitiveJoystick);
+    }
+
+    public static void FirstStartPlaySettings()
+    {
+        PlayerPrefs.SetInt("FirstStartPlaySettings", 1);
     }
 }

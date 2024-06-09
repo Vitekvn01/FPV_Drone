@@ -14,9 +14,11 @@ public class LevelData : ScriptableObject
 
     [SerializeField] private LevelProperties[] _levels;
 
-    [SerializeField] private int _countLevelUnlock; 
+    [SerializeField] private int _countLevelUnlock;
 
     public LevelProperties[] Levels => _levels;
+
+    public int LastUnlockLevel => _countLevelUnlock;
 
     public static void SetCurrentLevel(LevelProperties level)
     {
@@ -44,13 +46,12 @@ public class LevelData : ScriptableObject
     public void LoadLevelsUnlock()
     {
         LoadFromFile(this);
-        for (int i = 0; i < _countLevelUnlock; i++)
+        for (int i = 0; i == _countLevelUnlock; i++)
         {
-            if (_countLevelUnlock <= _levels.Length)
+            if (_countLevelUnlock < _levels.Length)
             {
                 _levels[i].SetLevelUnlock();
             }
-            
         }
     }
 
