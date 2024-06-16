@@ -16,21 +16,21 @@ public class LevelFailed : LevelCondition
 
     [SerializeField] private float _timer;
 
-    public static UnityEvent<float> OnEventTimer = null; 
+    public static UnityEvent<float> OnEventTimerFailed = null;
 
     [SerializeField] private float _radius;
     private SphereCollider _trigger;
 
     private void Awake()
     {
-
+        if (FailedType.Timer == failedType)
+        {
+            OnEventTimerFailed = new UnityEvent<float>();
+        }
     }
     void Start()
     {
-        if (FailedType.Timer == failedType)
-        {
-            OnEventTimer = new UnityEvent<float>();
-        }
+
         _trigger = gameObject.AddComponent<SphereCollider>();
         _trigger.radius = _radius;
         _trigger.isTrigger = true;
@@ -41,7 +41,7 @@ public class LevelFailed : LevelCondition
         if (FailedType.Timer == failedType)
         {
             _timer -= Time.deltaTime;
-            OnEventTimer.Invoke(_timer);
+            OnEventTimerFailed.Invoke(_timer);
             if (_timer <= 0)
             {
                 OnFailedLevelEvent.Invoke();
@@ -68,5 +68,9 @@ public class LevelFailed : LevelCondition
         Gizmos.DrawSphere(transform.position, _radius);
     }
 
+    private void OnDestroy()
+    {
+        OnEventTimerFailed = null;
+    }
 
 }

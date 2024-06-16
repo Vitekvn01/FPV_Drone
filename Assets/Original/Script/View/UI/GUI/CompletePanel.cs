@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class CompletePanel : MonoBehaviour
@@ -38,5 +39,11 @@ public class CompletePanel : MonoBehaviour
         _textRestartButton.text = LocalizationData.DictionaryLocalizationWords["Restart"];
         _textExitLoseButton.text = LocalizationData.DictionaryLocalizationWords["Exit"];
         _losePanel.SetActive(true);
+    }
+
+    public void LoadNextLevel()
+    {
+        LevelData.SetCurrentLevel(LevelData.CurrentLevel.NextLevelProperties);
+        SceneManager.LoadScene(LevelData.CurrentLevel.NextSceneName);
     }
 }

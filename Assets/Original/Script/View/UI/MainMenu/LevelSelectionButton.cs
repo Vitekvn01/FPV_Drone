@@ -12,7 +12,7 @@ public class LevelSelectionButton : MonoBehaviour
     [SerializeField] private Image _levelLockIcon;
     private void Start()
     {
-        _selectButtonText.text = LocalizationData.DictionaryLocalizationWords["Select"];
+        _selectButtonText.text = LocalizationData.DictionaryLocalizationWords["Play"];
         _levelLockIcon.gameObject.SetActive(false);
         if (_levelProperties.LevelLock == true)
         {

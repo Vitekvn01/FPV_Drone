@@ -12,11 +12,12 @@ public class PausePanel : MonoBehaviour
 
     private void Start()
     {
+        gameObject.SetActive(false);
         _continueButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Continue"];
         _settingsButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Settings"];
         _restartButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Restart"];
         _exitButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Exit"];
-        gameObject.SetActive(false);
+
     }
 
     public void ShowPausePanel()

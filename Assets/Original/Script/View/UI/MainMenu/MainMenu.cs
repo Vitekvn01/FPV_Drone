@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
         _settingsButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Settings"];
         _exitButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Exit"];
         levelIndex = 0;
-        PlayerPrefs.SetInt("FirstStartPlaySettings", 0);
+/*        PlayerPrefs.SetInt("FirstStartPlaySettings", 0);*/
     }
 
     public void PlayButton()
@@ -40,7 +40,7 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
-            LevelData.SetCurrentLevel(LevelController.Instance.LevelData.Levels[LevelController.Instance.LevelData.LastUnlockLevel]);
+            LevelData.SetCurrentLevel(LevelController.Instance.GetLastUnlockLevel());
             Debug.Log(LevelData.CurrentLevel);
             SceneManager.LoadScene(LevelController.Instance.LevelData.LastUnlockLevel + 1); // массив сцен больше чем массив левелс потому что меню под индексом 0 в нём 
         }

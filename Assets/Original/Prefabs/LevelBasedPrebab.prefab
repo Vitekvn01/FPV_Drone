@@ -281,6 +281,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4887699314220472963, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.87600005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887699314220472963, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887699314220472963, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.0125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887699314220472963, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.100202374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887699314220472963, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -0.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887699314220472963, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -3.5001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887699314220472963, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887699314220472963, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5199836782033117928, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
       propertyPath: m_Name
       value: LevelUI
@@ -341,7 +373,15 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Task: Destroy 3 tanks and an unarmored vehicle. Enemy tanks are outdated
         and easily destroyed in any unit, but some of them are reinforced with anti-drone
-        grilles.'
+        gnit, but some of them are reinforced with anti-drone gnit, but some of them
+        are reinforced with anti-drone gnit, but some of them are reinforced with
+        anti-drone gnit, but some of them are reinforced with anti-drone reinforced
+        with anti-drone gnit, but some of them are reinforced with anti-drone gnit,
+        but some of them are reinforced with anti-drone '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_fontSize
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
       propertyPath: m_fontAsset
@@ -364,9 +404,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 3394437388286987473, guid: 7646390b77643bf4ea78b366180777fb, type: 2}
+    - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
@@ -377,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
       propertyPath: m_HorizontalAlignment
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7342434575700448862, guid: 282f3f652b53dee4b9d0428555aaf8d4, type: 3}
       propertyPath: m_hasFontAssetChanged

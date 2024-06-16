@@ -14,15 +14,16 @@ public class LevelData : ScriptableObject
 
     [SerializeField] private LevelProperties[] _levels;
 
-    [SerializeField] private int _countLevelUnlock;
+    [SerializeField] private int _indexLevelUnlock;
 
     public LevelProperties[] Levels => _levels;
 
-    public int LastUnlockLevel => _countLevelUnlock;
+    public int LastUnlockLevel => _indexLevelUnlock;
 
     public static void SetCurrentLevel(LevelProperties level)
     {
         _currentLevel = level;
+        Debug.Log("_currentLevel " + level);
     }
 
     public void NextLevelUnlock()
@@ -34,8 +35,13 @@ public class LevelData : ScriptableObject
             {
                 if (_levels[i + 1].LevelLock)
                 {
-                    _levels[i + 1].SetLevelUnlock();
-                    _countLevelUnlock += 1;
+                    
+                    if (_indexLevelUnlock < _levels.Length - 1)
+                    {
+                        _indexLevelUnlock += 1;
+                        _levels[i + 1].SetLevelUnlock();
+                    }
+
                     SaveToFile();
                 }
             }
@@ -45,11 +51,13 @@ public class LevelData : ScriptableObject
 
     public void LoadLevelsUnlock()
     {
+        Debug.Log("COUNUNLOCK " +  _indexLevelUnlock);
         LoadFromFile(this);
-        for (int i = 0; i == _countLevelUnlock; i++)
+        for (int i = 0; i <= _indexLevelUnlock; i++)
         {
-            if (_countLevelUnlock < _levels.Length)
+            if (i < _levels.Length)
             {
+                Debug.Log("Ћевелјнлокћассив " + i + " = " + _levels[i]);
                 _levels[i].SetLevelUnlock();
             }
         }
@@ -71,7 +79,7 @@ public class LevelData : ScriptableObject
         // —оздаем экземпл€р LevelDataContainer и сохран€ем в него массив _levels
         LevelDataContainer container = new LevelDataContainer
         {
-            CountLevelUnlock = _countLevelUnlock
+            CountLevelUnlock = _indexLevelUnlock
         };
 
         // ѕреобразуем экземпл€р LevelDataContainer в JSON-строку и сохран€ем в файл
@@ -92,7 +100,7 @@ public class LevelData : ScriptableObject
             LevelDataContainer container = JsonUtility.FromJson<LevelDataContainer>(data);
     
             // «аписываем данные из контейнера в существующий экземпл€р LevelData
-            existingLevelData._countLevelUnlock = container.CountLevelUnlock;
+            existingLevelData._indexLevelUnlock = container.CountLevelUnlock;
     
             return existingLevelData;
         }

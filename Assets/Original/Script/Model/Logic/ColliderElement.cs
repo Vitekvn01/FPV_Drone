@@ -22,7 +22,7 @@ public class ColliderElement : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.GetComponent<Drone>() != null)
+        if (collider.gameObject.transform.root.GetComponent<Drone>() != null)
         {
             Debug.Log("Попадание в " + gameObject.name);
             isDefeat = true;

@@ -2861,6 +2861,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbd7522ec80b79479f232cf00cc22ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDestroyEntityEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnDeadEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2941,8 +2944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcaade41d4595c04f9fb75daa499c456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waypoints:
-  - {fileID: 0}
+  _waypoints: []
   _distanceComplete: 0
 --- !u!114 &3313514113577271403
 MonoBehaviour:
@@ -2956,6 +2958,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65dc2133ff85d6849913a1b72bc73e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AxisX: 0
+  AxisY: 0
+  AxisZ: 0
+  targetAngle: 0
   rotationSpeed: 90
   delayBetweenRotations: 2
 --- !u!82 &3098986258981328227

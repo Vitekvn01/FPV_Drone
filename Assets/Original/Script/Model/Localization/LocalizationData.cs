@@ -40,11 +40,10 @@ public class LocalizationData : ScriptableObject
     private void ParseAllText(string Text)
     {
         List<string> words = new List<string>(Text.Split('\n'));
-        Debug.Log(words);
         foreach (string word in words)
         {
             string[] text = word.Split(" : ");
-            Debug.Log(text[0] + " = " + text[1]);
+/*            Debug.Log(text[0] + " = " + text[1]);*/
             DictionaryLocalizationWords.Add(text[0], text[1]);
         }
     }

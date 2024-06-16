@@ -15,9 +15,9 @@ public class IndicatorsFlight : MonoBehaviour
 
     private void Start()
     {
-        if (LevelFailed.OnEventTimer != null)
+        if (LevelFailed.OnEventTimerFailed != null)
         {
-            LevelFailed.OnEventTimer.AddListener(SetTimer);
+            LevelFailed.OnEventTimerFailed.AddListener(SetTimer);
         }
     }
     void Update()
@@ -34,7 +34,7 @@ public class IndicatorsFlight : MonoBehaviour
         }
 
 
-        if (LevelFailed.OnEventTimer != null)
+        if (LevelFailed.OnEventTimerFailed != null)
         {
             Debug.Log("onEvent != null");
             TimeSpan failedTimeSpan = TimeSpan.FromSeconds(_failedTimer);

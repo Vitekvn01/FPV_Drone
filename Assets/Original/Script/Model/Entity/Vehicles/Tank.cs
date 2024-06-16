@@ -37,6 +37,7 @@ public class Tank : Vehicle
 
         _motorSound.Pause();
         _trackSound.Pause();
+        StopSuspention();
     }
 
     protected void Start()
@@ -76,11 +77,10 @@ public class Tank : Vehicle
 
     private void OnCollisionEnter(Collision collision)
     {
-/*        _bodyDefeatPosition = collision.gameObject.transform;*/
-        if (collision.gameObject.GetComponent<Drone>() != null)
+        Debug.Log("Коллизия");
+        if (collision.gameObject.transform.root.GetComponent<Drone>() != null)
         {
             dronesAttack = true;
-
         }
     }
 

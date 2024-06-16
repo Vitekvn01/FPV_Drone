@@ -27,6 +27,7 @@ public class Drone : Destructible
     private float _currentHeight;
 
     protected Rigidbody rb;
+    public Rigidbody RB => rb;
     protected Vector3 tiltDir; // направление наклона
     protected Vector3 tractionDir; // направление тяги
     protected Vector3 rotationDir; // направление поврота

@@ -99,7 +99,7 @@ public class VehicalCollectionData : ScriptableObject
         }
     }
 
-    
+
 
     public void SaveToFile()
     {
@@ -115,6 +115,8 @@ public class VehicalCollectionData : ScriptableObject
         // Преобразуем экземпляр LevelDataContainer в JSON-строку и сохраняем в файл
         var data = JsonUtility.ToJson(container); /// JsonUtility.ToJson(this) преобразует экземпляр LevelData в JSON-строку.
         File.WriteAllText(filePath, data);/// Запись данных в файл:
+
+        Debug.Log("Save");
     }
 
     public static VehicalCollectionData LoadFromFile(VehicalCollectionData existingVehicalCollectionData)

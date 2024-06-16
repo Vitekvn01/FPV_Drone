@@ -20,7 +20,7 @@ public class LevelController : SingletonBase<LevelController>
     }
     private void Start()
     {
-        
+
         Debug.Log(LevelData.CurrentLevel);
         Time.timeScale = 1;
         if (LevelCondition.OnCompleteLevelEvent != null)
@@ -32,7 +32,7 @@ public class LevelController : SingletonBase<LevelController>
         {
             LevelCondition.OnFailedLevelEvent.AddListener(LevelLose);
         }
-        
+
     }
 
     private void LevelPassed()
@@ -48,4 +48,8 @@ public class LevelController : SingletonBase<LevelController>
         OnLevelLoseEvent.Invoke();
     }
 
+    public LevelProperties GetLastUnlockLevel()
+    {
+        return LevelData.Levels[LevelData.LastUnlockLevel];
+    }
 }

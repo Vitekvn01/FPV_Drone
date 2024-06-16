@@ -15,7 +15,7 @@ public class RespawnPanel : MonoBehaviour
     {
         _droneText.text = LocalizationData.DictionaryLocalizationWords["Drones"];
         _enemyText.text = LocalizationData.DictionaryLocalizationWords["Enemies"];
-        _createDroneText.text = "FPV";
+        _createDroneText.text = LocalizationData.DictionaryLocalizationWords["Kamikaze-drone"];
     }
     private void Update()
     {
