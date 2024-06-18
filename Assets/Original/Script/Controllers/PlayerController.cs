@@ -51,7 +51,7 @@ public class PlayerController : SingletonBase<PlayerController>
     private void RemoveDroneCount()
     {
         _countDrone -= 1;
-        if (_countDrone <= 0)
+        if (_countDrone <= 0 && Enemy.ListEnemies.Count != 0)
         {
             OnOverCountDroneEvent.Invoke();
             _countDrone = 0;

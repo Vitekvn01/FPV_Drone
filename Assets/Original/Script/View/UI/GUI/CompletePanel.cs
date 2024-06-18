@@ -43,7 +43,7 @@ public class CompletePanel : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        LevelData.SetCurrentLevel(LevelData.CurrentLevel.NextLevelProperties);
         SceneManager.LoadScene(LevelData.CurrentLevel.NextSceneName);
+        LevelData.SetCurrentLevel(LevelData.CurrentLevel.NextLevelProperties);
     }
 }

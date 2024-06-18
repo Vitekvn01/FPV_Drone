@@ -28,24 +28,30 @@ public class LevelData : ScriptableObject
 
     public void NextLevelUnlock()
     {
-        for (int i = 0; i < _levels.Length; i++)
-        {
-            Debug.Log(_levels[i] + " " + _currentLevel);
-            if (_levels[i] == _currentLevel)
-            {
-                if (_levels[i + 1].LevelLock)
-                {
-                    
-                    if (_indexLevelUnlock < _levels.Length - 1)
-                    {
-                        _indexLevelUnlock += 1;
-                        _levels[i + 1].SetLevelUnlock();
-                    }
 
-                    SaveToFile();
-                }
-            }
-        }
+        _currentLevel.NextLevelProperties.SetLevelUnlock();
+        SaveToFile();
+        /*
+                for (int i = 0; i < _levels.Length; i++)
+                {
+                    Debug.Log(_levels[i] + " " + _currentLevel);
+                    if (_levels[i] == _currentLevel)
+                    {
+                        if (_levels[i + 1].LevelLock)
+                        {
+
+                            if (_indexLevelUnlock < _levels.Length - 1)
+                            {
+                                _indexLevelUnlock += 1;
+                                _levels[i + 1].SetLevelUnlock();
+
+                                Debug.Log(_levels[i+1] + " Unlock");
+                            }
+
+                            SaveToFile();
+                        }
+                    }
+                }*/
 
     }
 

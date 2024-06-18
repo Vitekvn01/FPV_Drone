@@ -16204,7 +16204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6230661561116913070, guid: fe8c2eb8a040c394194c63328350c357, type: 3}
       propertyPath: _countDrone
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6649266338519687744, guid: fe8c2eb8a040c394194c63328350c357, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16262,6 +16262,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8160174075137922023, guid: fe8c2eb8a040c394194c63328350c357, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 19739d85ee6d5ec40a33d09844d4d027, type: 3}
     - target: {fileID: 8160174075137922023, guid: fe8c2eb8a040c394194c63328350c357, type: 3}
       propertyPath: stringTask_ID.Array.size
       value: 1

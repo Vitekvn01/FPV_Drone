@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 8
   VehiclePrefab: {fileID: 9135218002965536996, guid: 702bef2301edce341a83b4635c32bef1, type: 3}
-  Name: UAZ-452
+  Name: UAZ

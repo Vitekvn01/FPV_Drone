@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 7311868814342034481}
   - component: {fileID: 3797623897817550208}
   - component: {fileID: 4173483687154382889}
+  - component: {fileID: 783415266254454116}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -245,6 +246,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.3866148, y: 0.94545186, z: 3.4495656}
   m_Center: {x: 0, y: -0.746338, z: 0.054675013}
+--- !u!114 &783415266254454116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127086154477710103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65dc2133ff85d6849913a1b72bc73e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AxisX: 0
+  AxisY: 1
+  AxisZ: 0
+  targetAngle: 0
+  IsRandom: 1
+  rotationSpeed: 90
+  delayBetweenRotations: 2
 --- !u!1 &136984114046996588
 GameObject:
   m_ObjectHideFlags: 0
@@ -4048,6 +4068,7 @@ MonoBehaviour:
   - {fileID: 5228370571871982929}
   _tracks:
   - {fileID: 7626239679495164936}
+  _dirRotate: 0
 --- !u!1 &7489070018054646805
 GameObject:
   m_ObjectHideFlags: 0
@@ -4577,7 +4598,6 @@ GameObject:
   - component: {fileID: 5626189725074367977}
   - component: {fileID: 3769042010641611274}
   - component: {fileID: 1185622193162429334}
-  - component: {fileID: 5271995475448474159}
   - component: {fileID: -6170787527075005343}
   - component: {fileID: -7173532385821129586}
   m_Layer: 0
@@ -4745,20 +4765,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _explosionPrefub: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
---- !u!114 &5271995475448474159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8345206591177570257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65dc2133ff85d6849913a1b72bc73e6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 90
-  delayBetweenRotations: 2
 --- !u!82 &-6170787527075005343
 AudioSource:
   m_ObjectHideFlags: 0

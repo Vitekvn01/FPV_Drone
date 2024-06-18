@@ -119,12 +119,12 @@ public class PlayerInput : SingletonBase<PlayerInput>
         if (_movementType == MovementType.Arcade)
         {
             _drone.SetDrugRigidbody(_drugAracade);
-            _drone.SetForceDirVectorZ(heightForce/ _drugAracade, SensitiveJoystick);
+            _drone.SetForceDirVectorZ(heightForce/ _drugAracade, 10);
         }
         if (_movementType == MovementType.Simulator)
         {
             _drone.SetDrugRigidbody(_drugSimulator);
-            _drone.SetForceDirVectorY(heightForce/(_drugSimulator*3), SensitiveJoystick);
+            _drone.SetForceDirVectorY(heightForce/(_drugSimulator*3), 10);
         }
     }
 

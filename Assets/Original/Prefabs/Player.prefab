@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _doNotDestroyOnLoad: 0
   _droneSpawner: {fileID: 0}
-  _countDrone: 10
+  _countDrone: 100
   _cameraScout: {fileID: 0}
   _droneScout: {fileID: 0}
   _respawnPanel: {fileID: 0}

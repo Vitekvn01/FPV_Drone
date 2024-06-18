@@ -8,6 +8,7 @@ public class DelayRotateObject : MonoBehaviour
     [SerializeField] private bool AxisY = false;
     [SerializeField] private bool AxisZ = false;
     [SerializeField] private float targetAngle;
+    [SerializeField] private bool IsRandom = false;
 
     private Transform turretTransform; // —сылка на трансформ башни танка
     public float rotationSpeed = 90f; // —корость вращени€ в градусах в секунду
@@ -22,6 +23,13 @@ public class DelayRotateObject : MonoBehaviour
 
     private void Start()
     {
+        if (IsRandom)
+        {
+            targetAngle = Random.Range(-90f, 90f);
+            rotationSpeed = Random.Range(10f, 50f);
+            delayBetweenRotations = Random.Range(0f, 8f);
+        }
+
         turretTransform = gameObject.transform;
         if (gameObject.transform.root.GetComponent<Destructible>() != null)
         {

@@ -623,6 +623,7 @@ MonoBehaviour:
   _tracks:
   - {fileID: 8993339920459133756}
   - {fileID: 4142321696229083581}
+  _dirRotate: 0
 --- !u!1 &2662747850210623336
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +667,7 @@ GameObject:
   - component: {fileID: 7085603272493106400}
   - component: {fileID: 7490690168350555898}
   - component: {fileID: 8735559650729019230}
+  - component: {fileID: 3437707459660262596}
   m_Layer: 0
   m_Name: turret
   m_TagString: Untagged
@@ -761,6 +763,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.0816467, y: 0.7984603, z: 6.0305195}
   m_Center: {x: 0, y: 0.08363958, z: 0.10049951}
+--- !u!114 &3437707459660262596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2963001005942531616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65dc2133ff85d6849913a1b72bc73e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AxisX: 0
+  AxisY: 1
+  AxisZ: 0
+  targetAngle: 0
+  IsRandom: 1
+  rotationSpeed: 90
+  delayBetweenRotations: 2
 --- !u!1 &3343756077723597707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2790,7 +2811,6 @@ GameObject:
   - component: {fileID: 4518457675262376966}
   - component: {fileID: 3343081557141232344}
   - component: {fileID: 4413055524791911550}
-  - component: {fileID: 3313514113577271403}
   - component: {fileID: 3098986258981328227}
   - component: {fileID: 1309250753703438602}
   m_Layer: 0
@@ -2946,24 +2966,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waypoints: []
   _distanceComplete: 0
---- !u!114 &3313514113577271403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616634655837090054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65dc2133ff85d6849913a1b72bc73e6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AxisX: 0
-  AxisY: 0
-  AxisZ: 0
-  targetAngle: 0
-  rotationSpeed: 90
-  delayBetweenRotations: 2
 --- !u!82 &3098986258981328227
 AudioSource:
   m_ObjectHideFlags: 0

@@ -551,6 +551,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3241352179492918975, guid: 70c00e1b8a3d19644b192538989a0694, type: 3}
+      propertyPath: _countDrone
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241352179492918975, guid: 70c00e1b8a3d19644b192538989a0694, type: 3}
       propertyPath: _respawnPanel
       value: 
       objectReference: {fileID: 7633854831625835043}
