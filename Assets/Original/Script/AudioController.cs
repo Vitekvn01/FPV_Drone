@@ -5,18 +5,19 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class AudioController : SingletonBase<AudioController>
 {
-    [SerializeField] private AudioSettings _audioSettings;
+    [SerializeField] public AudioSettings AudioSettings;
 
     private AudioSource _audioSource;
 
     protected override void Awake()
     {
         base.Awake();
-        _audioSettings.LoadAudioSettings();
+        AudioSettings.LoadAudioSettings();
     }
 
     void Start()
     {
+        AudioSettings.LoadAudioSettings();
         _audioSource = GetComponent<AudioSource>();
         _audioSource.loop = true;
         _audioSource.spatialBlend = 0;

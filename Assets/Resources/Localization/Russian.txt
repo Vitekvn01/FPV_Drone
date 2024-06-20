@@ -9,6 +9,8 @@ Select : Выбрать
 Continue : Продолжить
 Win : Миссия выполнена
 Lose : Вы проиграли
+The drones are over : Дроны закончились
+Get more for watching : Получить за рекламу
 Main menu : Главное меню
 Next level : Следующий уровень
 Arcade : Аркада

@@ -28,9 +28,9 @@ public class LevelFailed : LevelCondition
             OnEventTimerFailed = new UnityEvent<float>();
         }
     }
-    void Start()
+    protected override void Start()
     {
-
+        base.Start();
         _trigger = gameObject.AddComponent<SphereCollider>();
         _trigger.radius = _radius;
         _trigger.isTrigger = true;

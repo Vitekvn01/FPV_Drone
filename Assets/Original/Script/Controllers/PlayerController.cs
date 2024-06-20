@@ -53,8 +53,9 @@ public class PlayerController : SingletonBase<PlayerController>
         _countDrone -= 1;
         if (_countDrone <= 0 && Enemy.ListEnemies.Count != 0)
         {
-            OnOverCountDroneEvent.Invoke();
-            _countDrone = 0;
+           OnOverCountDroneEvent.Invoke();
+           Debug.Log("OnOverCountDroneEvent");
+           _countDrone = 0;
         }
     }
 
@@ -79,5 +80,10 @@ public class PlayerController : SingletonBase<PlayerController>
         PlayerInput.Instance.SetTargetDrone(_currentDrone);
         _camera = camera;
         _camera = Camera.main;
+    }
+
+    public void AddPlayerDrone(int count)
+    {
+        _countDrone += count;
     }
 }

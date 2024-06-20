@@ -43,6 +43,7 @@ public class MainMenu : MonoBehaviour
             LevelData.SetCurrentLevel(LevelController.Instance.GetLastUnlockLevel());
             Debug.Log(LevelData.CurrentLevel);
             SceneManager.LoadScene(LevelController.Instance.LevelData.LastUnlockLevel + 1); // массив сцен больше чем массив левелс потому что меню под индексом 0 в нём 
+            AdsYandex.Instance.ShowFullScreenAds();
         }
 
     }

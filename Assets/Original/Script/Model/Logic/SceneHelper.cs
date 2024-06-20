@@ -11,6 +11,7 @@ public class SceneHelper : MonoBehaviour
     public void LoadScene(int buildIndex)
     {
         SceneManager.LoadScene(buildIndex);
+        AdsYandex.Instance.ShowFullScreenAds();
     }
 
     public void Quit()

@@ -6,8 +6,9 @@ using UnityEngine.Events;
 public class LevelComplete : LevelCondition
 {
     private bool IsInvokeEvent = false;
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         IsInvokeEvent = false;
     }
 

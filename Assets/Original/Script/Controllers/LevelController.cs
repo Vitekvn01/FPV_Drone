@@ -31,6 +31,7 @@ public class LevelController : SingletonBase<LevelController>
         if (LevelCondition.OnFailedLevelEvent != null)
         {
             LevelCondition.OnFailedLevelEvent.AddListener(LevelLose);
+            Debug.Log("subsriptingFailedEvent");
         }
 
     }

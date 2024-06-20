@@ -7,6 +7,8 @@ Back : Back
 Exit : Exit
 Select : Select
 Continue : Continue
+The drones are over : The drones are over
+Get more for watching : Get more for watching
 Win : Mission complete
 Lose : You Lose
 Main menu : Main menu

@@ -5,23 +5,33 @@ using UnityEngine.UIElements;
 
 public class CompletePanel : MonoBehaviour
 {
-
+    [Header("Ïîáåäà")]
     [SerializeField] private GameObject _winPanel;
     [SerializeField] private TextMeshProUGUI _textWinButton;
     [SerializeField] private TextMeshProUGUI _textNextLevelButton;
     [SerializeField] private TextMeshProUGUI _textExitWinButton;
+    [Header("Ïðîèãðûø")]
     [SerializeField] private GameObject _losePanel;
     [SerializeField] private TextMeshProUGUI _textLoseButton;
     [SerializeField] private TextMeshProUGUI _textRestartButton;
     [SerializeField] private TextMeshProUGUI _textExitLoseButton;
+
+    [Header("Êîí÷èëèñü äðîíû")]
+    [SerializeField] private GameObject _nullCountDronePanel;
+    [SerializeField] private TextMeshProUGUI _nullDroneText;
+    [SerializeField] private TextMeshProUGUI _textRewardButton;
+    [SerializeField] private TextMeshProUGUI _textÑontinueButton;
+
+
+
     void Start()
     {
-
-
         _winPanel.SetActive(false);
         _losePanel.SetActive(false);
+        _nullCountDronePanel.SetActive(false);
         LevelController.OnLevelPassedEvent.AddListener(ShowWinPanel);
         LevelController.OnLevelLoseEvent.AddListener(ShowLosePanel);
+        PlayerController.OnOverCountDroneEvent.AddListener(ShowNullDronePanel);
     }
 
     private void ShowWinPanel()
@@ -41,9 +51,35 @@ public class CompletePanel : MonoBehaviour
         _losePanel.SetActive(true);
     }
 
+    private void ShowNullDronePanel()
+    {
+        _nullDroneText.text = LocalizationData.DictionaryLocalizationWords["The drones are over"];
+        _textRewardButton.text = LocalizationData.DictionaryLocalizationWords["Get more for watching"];
+        _textÑontinueButton.text = LocalizationData.DictionaryLocalizationWords["Continue"];
+        _nullCountDronePanel.SetActive(true);
+    }
+
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(LevelData.CurrentLevel.NextSceneName);
         LevelData.SetCurrentLevel(LevelData.CurrentLevel.NextLevelProperties);
+        AdsYandex.Instance.ShowFullScreenAds();
+    }
+
+    public void LevelLose()
+    {
+        LevelController.OnLevelLoseEvent.Invoke();
+        _nullCountDronePanel.SetActive(false);
+    }
+
+    public void ShowReward()
+    {
+        AdsYandex.Instance.ShowReawardAds();
+        _nullCountDronePanel.SetActive(false);
+    }
+
+    public void ShowFullScreen()
+    {
+        AdsYandex.Instance.ShowFullScreenAds();
     }
 }
