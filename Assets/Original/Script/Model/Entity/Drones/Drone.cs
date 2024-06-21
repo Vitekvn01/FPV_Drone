@@ -84,7 +84,7 @@ public class Drone : Destructible
     /// </summary>
     protected virtual void Rotate()
     {
-        transform.Rotate(transform.up * rotationDir.x * forceRotate * Time.deltaTime); // вращение
+        transform.Rotate(transform.up * rotationDir.x * forceRotate * Time.deltaTime, Space.World); // вращение
     }
 
     /// <summary>

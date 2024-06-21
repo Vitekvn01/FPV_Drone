@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject _settingsButton;
     [SerializeField] private GameObject _collectionButton;
     [SerializeField] private GameObject _exitButton;
+    [SerializeField] private GameObject _rewardButton;
 
 
     private int levelIndex;
@@ -27,6 +28,9 @@ public class MainMenu : MonoBehaviour
         _collectionButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Collection"];
         _settingsButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Settings"];
         _exitButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Exit"];
+
+        _rewardButton.GetComponentInChildren<TextMeshProUGUI>().enableAutoSizing = true;
+        _rewardButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationData.DictionaryLocalizationWords["Support the developer"];
         levelIndex = 0;
 /*        PlayerPrefs.SetInt("FirstStartPlaySettings", 0);*/
     }
@@ -82,6 +86,9 @@ public class MainMenu : MonoBehaviour
         _collectionPanel.SetActive(false);
     }
 
-
+    public void SupportButton()
+    {
+        AdsYandex.Instance.ShowReawardAds();
+    }
 
 }

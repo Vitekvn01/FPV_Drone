@@ -20,7 +20,7 @@ public class LocalizationData : ScriptableObject
 
     private string GetSystemLanguage()
     {
-        if (Enum.IsDefined(typeof(LanguageLocalization), Application.systemLanguage.ToString()))
+/*        if (Enum.IsDefined(typeof(LanguageLocalization), Application.systemLanguage.ToString()))
         {
             Debug.Log(Application.systemLanguage.ToString());
             return Application.systemLanguage.ToString();
@@ -28,7 +28,9 @@ public class LocalizationData : ScriptableObject
         else
         {
             return SystemLanguage.English.ToString();
-        }
+        }*/
+
+        return SDKLANG.Instance.Languages;
 
     }
     private string GetLocalizationText(string NameLocalizationFile)

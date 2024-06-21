@@ -23,7 +23,10 @@ public class AdsYandex : SingletonBase<AdsYandex>
 
     public void AddLives()
     {
-        PlayerController.Instance.AddPlayerDrone(3);
+        if (PlayerController.Instance != null)
+        {
+            PlayerController.Instance.AddPlayerDrone(3);
+        }
         // выдаём бонусы пользователю за просмотр рекламы
     }
 

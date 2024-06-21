@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class UIController : SingletonBase<UIController>
 {
-    [SerializeField] private LocalizationData _localizationData;
+    [SerializeField] public LocalizationData LocalizationData;
     [SerializeField] private GameObject _firsStartPlaySettingsPanel;
 
     protected override void Awake()
     {
         base.Awake();
-        _localizationData.LoadLocalizaionText();
+        
+    }
+
+    private void Start()
+    {
+/*        LocalizationData.LoadLocalizaionText();*/
     }
 
     public void FirstStartSettingsSetActive()

@@ -51,6 +51,22 @@ public class PlayerInput : SingletonBase<PlayerInput>
         _inputSettings.LoadInputSettings();
     }
 
+    private void Start()
+    {
+        if (Application.isMobilePlatform != true)
+        {
+            _inputMode = InputMode.KeyBoard;
+            _upClickHold.gameObject.SetActive(false);
+            _downClickHold.gameObject.SetActive(false);
+            _mobilelJoystickRight.gameObject.SetActive(false);
+            _mobilelJoystickLeft.gameObject.SetActive(false);
+        }
+        else
+        {
+            _inputMode = InputMode.Mobile;
+        }
+    }
+
     void FixedUpdate()
     {
         if (_inversionJoystick)
@@ -70,6 +86,7 @@ public class PlayerInput : SingletonBase<PlayerInput>
             torque.x = Input.GetAxis("Horizontal");
             torque.y = -Input.GetAxis("Vertical");
             heightForce.y = Input.GetAxis("Jump");
+            rotation.x = Input.GetAxis("Rotation");
         }
 
         if (_drone != null)
@@ -78,13 +95,10 @@ public class PlayerInput : SingletonBase<PlayerInput>
             {
                 MoveFPVDrone();
             }
-
             if (_drone.DroneType == DroneType.ScoutDrone)
             {
-
                 MoveScoutDrone();
             }
-
             SetParametrFliht();
         }
     }
@@ -95,13 +109,14 @@ public class PlayerInput : SingletonBase<PlayerInput>
         if (_drone.DroneType == DroneType.ScoutDrone)
         {
             DrawZoomButtonPanel(true);
-            
         }
         else
         {
             DrawZoomButtonPanel(false);
-            _mobilelJoystickLeft.gameObject.SetActive(true);
-            
+            if (_inputMode == InputMode.Mobile)
+            {
+                _mobilelJoystickLeft.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -133,11 +148,11 @@ public class PlayerInput : SingletonBase<PlayerInput>
         if (_drone is ScoutDrone)
         {
             ScoutDrone scoutDrone = (ScoutDrone)_drone;
-            if (_upClickHold.IsHold)
+            if (_upClickHold.IsHold || Input.GetAxis("Rotation") < 0)
             {
                 scoutDrone.AddZOOM();
             }
-            if (_downClickHold.IsHold)
+            if (_downClickHold.IsHold || Input.GetAxis("Rotation") < 0)
             {
                 scoutDrone.RemoveZOOM();
             }

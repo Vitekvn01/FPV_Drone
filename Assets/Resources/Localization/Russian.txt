@@ -7,6 +7,7 @@ Back : Назад
 Exit : Выход
 Select : Выбрать
 Continue : Продолжить
+Support the developer : Поддержать разработчика
 Win : Миссия выполнена
 Lose : Вы проиграли
 The drones are over : Дроны закончились
