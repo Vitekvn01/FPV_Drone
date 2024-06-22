@@ -21,6 +21,7 @@ public class Drone : Destructible
     [SerializeField] private List<GameObject> helixList;
     [SerializeField] protected AudioSource _helixSound;
 
+    bool isHovering;
 
 
     private bool isTraction = false;
@@ -92,7 +93,14 @@ public class Drone : Destructible
     /// </summary>
     protected virtual void Traction()
     {
-        rb.AddRelativeForce(tractionDir * forceTraction * Time.deltaTime, ForceMode.Acceleration);  // тяга
+        if (tractionDir.y > 0 || tractionDir.y == 0)
+        {
+            rb.AddRelativeForce(tractionDir * forceTraction * Time.deltaTime, ForceMode.Acceleration);  // тяга
+        }
+        else
+        {
+            rb.AddForce(tractionDir * forceTraction * Time.deltaTime, ForceMode.Acceleration);  // тяга
+        }
     }
 
     /// <summary>
@@ -111,10 +119,14 @@ public class Drone : Destructible
     /// </summary>
     protected virtual void Hovering()
     {
-        float gravity = Physics.gravity.y; // Получаем гравитационную силу по оси Y
-        _hoverForce = rb.mass * -gravity / Time.deltaTime; // Сила, необходимая для компенсации гравитации
+        if (isHovering)
+        {
+            float gravity = Physics.gravity.y; // Получаем гравитационную силу по оси Y
+            _hoverForce = rb.mass * -gravity / Time.deltaTime; // Сила, необходимая для компенсации гравитации
 
-        rb.AddRelativeForce(Vector3.up * _hoverForce * Time.deltaTime, ForceMode.Force); // сила для удержания дрона на высоте
+            rb.AddRelativeForce(Vector3.up * _hoverForce * Time.deltaTime, ForceMode.Force); // сила для удержания дрона на высоте
+        }
+
 
         _currentSpeed = rb.velocity.magnitude;
         _currentHeight = transform.position.y;
@@ -133,7 +145,7 @@ public class Drone : Destructible
 
     protected virtual void TractionSoundEffect()
     {
-        if (tractionDir.z != 0 || tractionDir.z != 0)
+        if (tractionDir.z != 0 || tractionDir.y != 0)
         {
             _helixSound.volume = 0.75f;
             _helixSound.pitch = 1.10f;
@@ -161,7 +173,19 @@ public class Drone : Destructible
 
     public void SetForceDirVectorY(Vector3 Value, float Sensitive)
     {
+/*        if (Value.y > 0 || Value.y == 0)
+        {
+            tractionDir.y = Value.y * Sensitive;
+            isHovering = true;
+        }
+        else
+        {
+            isHovering = false;
+        }*/
+
+
         tractionDir.y = Value.y * Sensitive;
+        isHovering = true;
     }
 
     public void SetDirRotation(Vector3 Value, float Sensitive)

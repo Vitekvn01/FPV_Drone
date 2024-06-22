@@ -23,7 +23,6 @@ Tilt inversion : Tilt inversion
 Input sensitivity : Input sensitivity
 Music volume : Music volume
 Effects volume : Effects volume
-Kamikaze-drone : Kamikaze-drone
 Select control mode : Select control mode
 Info Collection Panel : Destroy enemy vehicles to open the collection
 Count : Count

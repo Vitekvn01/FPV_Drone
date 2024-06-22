@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.UI.ScrollRect;
 
 public enum LanguageLocalization
@@ -20,17 +21,28 @@ public class LocalizationData : ScriptableObject
 
     private string GetSystemLanguage()
     {
-/*        if (Enum.IsDefined(typeof(LanguageLocalization), Application.systemLanguage.ToString()))
+        /*        if (Enum.IsDefined(typeof(LanguageLocalization), Application.systemLanguage.ToString()))
+                {
+                    Debug.Log(Application.systemLanguage.ToString());
+                    return Application.systemLanguage.ToString();
+                }
+                else
+                {
+                    return SystemLanguage.English.ToString();
+                }*/
+
+        if (SDKLANG.Instance.Languages != null)
         {
-            Debug.Log(Application.systemLanguage.ToString());
-            return Application.systemLanguage.ToString();
+            Debug.Log("Languages = " + SDKLANG.Instance.Languages);
+            return SDKLANG.Instance.Languages;
+
         }
         else
         {
-            return SystemLanguage.English.ToString();
-        }*/
+            Debug.Log("Languages = null ");
+            return LanguageLocalization.English.ToString();
+        }
 
-        return SDKLANG.Instance.Languages;
 
     }
     private string GetLocalizationText(string NameLocalizationFile)
@@ -45,7 +57,7 @@ public class LocalizationData : ScriptableObject
         foreach (string word in words)
         {
             string[] text = word.Split(" : ");
-/*            Debug.Log(text[0] + " = " + text[1]);*/
+            /*            Debug.Log(text[0] + " = " + text[1]);*/
             DictionaryLocalizationWords.Add(text[0], text[1]);
         }
     }
@@ -70,6 +82,7 @@ public class LocalizationData : ScriptableObject
         string allText = GetLocalizationText(Language);
         PlayerPrefs.SetString("Language", Language);
         ParseAllText(allText);
+        Debug.Log("Локализация загружена");
     }
     public void ChangeLanguage()
     {
@@ -83,6 +96,22 @@ public class LocalizationData : ScriptableObject
         }
 
         Localization(language.ToString());
+
+    }
+
+    public void LoadLocalizaionSDKText(string Language)
+    {
+        if (Language == "ru")
+        {
+            Localization("Russian");
+            language = LanguageLocalization.Russian;
+        }
+        if (Language == "en")
+        {
+            Localization("English");
+            language = LanguageLocalization.English;
+        }
+
 
     }
 

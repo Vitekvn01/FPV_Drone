@@ -5,12 +5,13 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using SimpleJSON;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SDKLANG : SingletonBase<SDKLANG>
 {
     public string Languages;
     public string deviceString;
-    
+
     [DllImport("__Internal")] private static extern void ProjectStarted();
     
     protected override void Awake()
@@ -21,7 +22,7 @@ public class SDKLANG : SingletonBase<SDKLANG>
 
     private void Start()
     {
-/*        ProjectStarted();*/
+       ProjectStarted();
     }
 
 
@@ -36,26 +37,8 @@ public class SDKLANG : SingletonBase<SDKLANG>
     {
         var json = JSON.Parse(_lang);
         string lang = json["browser"]["lang"];
-        /*        Languages = lang;
-                Languages = "Error";*/
-        print(lang);
-        if (lang == "ru")
-        {
 
-            Languages = "Russian";
-            UIController.Instance.LocalizationData.LoadLocalizaionText();
-        }
-        else
-        {
-            if (lang == "en")
-            {
-                Languages = "English";
-                UIController.Instance.LocalizationData.LoadLocalizaionText();
-            }
-
-        }
-
-
+        UIController.Instance.LocalizationData.LoadLocalizaionSDKText(lang);
     }
 
     public void GettingDevice(string _device)

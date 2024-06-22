@@ -139,7 +139,7 @@ public class PlayerInput : SingletonBase<PlayerInput>
         if (_movementType == MovementType.Simulator)
         {
             _drone.SetDrugRigidbody(_drugSimulator);
-            _drone.SetForceDirVectorY(heightForce/(_drugSimulator*3), 10);
+            _drone.SetForceDirVectorY(heightForce, 10);
         }
     }
 
@@ -152,7 +152,7 @@ public class PlayerInput : SingletonBase<PlayerInput>
             {
                 scoutDrone.AddZOOM();
             }
-            if (_downClickHold.IsHold || Input.GetAxis("Rotation") < 0)
+            if (_downClickHold.IsHold || Input.GetAxis("Rotation") > 0)
             {
                 scoutDrone.RemoveZOOM();
             }
