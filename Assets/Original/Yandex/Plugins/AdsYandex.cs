@@ -37,8 +37,9 @@ public class AdsYandex : SingletonBase<AdsYandex>
     }
     public void OpenReward()
     {
-        Time.timeScale = 0;
         AudioController.Instance.AudioSettings.SoundOff();
+        Time.timeScale = 0;
+
     }
 
 }

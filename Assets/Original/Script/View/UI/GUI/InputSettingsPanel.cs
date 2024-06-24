@@ -25,7 +25,14 @@ public class InputSettingsPanel : MonoBehaviour
         _settingMovementText.text = LocalizationData.DictionaryLocalizationWords[_inputSettings.MovementType.ToString()]; ;
 
         _settingInfoInversionText.text = LocalizationData.DictionaryLocalizationWords["Tilt inversion"];
-        _settingInversionText.text = _inputSettings.OnInversionJoystick.ToString();
+        if (_inputSettings.OnInversionJoystick == true)
+        {
+            _settingInversionText.text = LocalizationData.DictionaryLocalizationWords["On"];
+        }
+        else
+        {
+            _settingInversionText.text = LocalizationData.DictionaryLocalizationWords["Off"];
+        }
 
         _settingSensetiveText.text = LocalizationData.DictionaryLocalizationWords["Input sensitivity"];
         _slider.value = PlayerPrefs.GetFloat("sensitivejoystick", 8);
@@ -42,7 +49,14 @@ public class InputSettingsPanel : MonoBehaviour
     public void SelectInversionJoystick()
     {
         _inputSettings.SettingInversionJoystick();
-        _settingInversionText.text = _inputSettings.OnInversionJoystick.ToString();
+        if (_inputSettings.OnInversionJoystick == true)
+        {
+            _settingInversionText.text = LocalizationData.DictionaryLocalizationWords["On"];
+        }
+        else
+        {
+            _settingInversionText.text = LocalizationData.DictionaryLocalizationWords["Off"];
+        }
     }
 
     public void SelectSensetiveJoystick()

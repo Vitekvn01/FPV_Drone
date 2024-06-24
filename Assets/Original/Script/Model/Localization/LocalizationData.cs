@@ -8,6 +8,8 @@ public enum LanguageLocalization
 {
     English,
     Russian,
+    Turkish,
+    German,
 }
 
 [CreateAssetMenu]
@@ -86,13 +88,40 @@ public class LocalizationData : ScriptableObject
     }
     public void ChangeLanguage()
     {
+
+
+/*        if (language == LanguageLocalization.Russian)
+        {
+            
+        }
+        if (language == LanguageLocalization.Turkish)
+        {
+            
+        }
+        if (language == LanguageLocalization.German)
+        {
+            
+        }
         if (language == LanguageLocalization.English)
         {
-            language = LanguageLocalization.Russian;
-        }
-        else
+            
+        }*/
+
+        switch (language)
         {
-            language = LanguageLocalization.English;
+            case LanguageLocalization.Russian:
+                language = LanguageLocalization.Turkish;
+                break;
+            case LanguageLocalization.German:
+                language = LanguageLocalization.English;
+                break;
+            case LanguageLocalization.Turkish:
+                language = LanguageLocalization.German;
+                break;
+            case LanguageLocalization.English:
+                language = LanguageLocalization.Russian;
+                break;
+
         }
 
         Localization(language.ToString());
@@ -101,7 +130,7 @@ public class LocalizationData : ScriptableObject
 
     public void LoadLocalizaionSDKText(string Language)
     {
-        if (Language == "ru")
+/*        if (Language == "ru")
         {
             Localization("Russian");
             language = LanguageLocalization.Russian;
@@ -110,8 +139,41 @@ public class LocalizationData : ScriptableObject
         {
             Localization("English");
             language = LanguageLocalization.English;
-        }
+        }*/
 
+        if (PlayerPrefs.GetInt("FirstStartLocalizaion", 0) == 0)
+        {
+            if (Language == "ru")
+            {
+                Localization("Russian");
+                language = LanguageLocalization.Russian;
+                PlayerPrefs.SetString("Language", language.ToString());
+            }
+            if (Language == "en")
+            {
+                Localization("English");
+                language = LanguageLocalization.English;
+                PlayerPrefs.SetString("Language", language.ToString());
+            }
+            if (Language == "tr")
+            {
+                Localization("Turkish");
+                language = LanguageLocalization.Turkish;
+                PlayerPrefs.SetString("Language", language.ToString());
+            }
+            if (Language == "de")
+            {
+                Localization("German");
+                language = LanguageLocalization.German;
+                PlayerPrefs.SetString("Language", language.ToString());
+            }
+
+            PlayerPrefs.SetInt("FirstStartLocalizaion", 1);
+        }
+        else
+        {
+            Localization(PlayerPrefs.GetString("Language", "English"));
+        }
 
     }
 

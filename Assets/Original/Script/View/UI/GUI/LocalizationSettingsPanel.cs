@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,7 +15,23 @@ public class LocalizationSettingsPanel : MonoBehaviour
 
     private void Update()
     {
-        _settingLocalizationText.text = _localizationData.Language.ToString();
+        switch (UIController.Instance.LocalizationData.Language)
+        {
+            case LanguageLocalization.Russian:
+                _settingLocalizationText.text = "Русский";
+                break;
+            case LanguageLocalization.German:
+                _settingLocalizationText.text = "Deutsch";
+                break;
+            case LanguageLocalization.Turkish:
+                _settingLocalizationText.text = "Türkçe";
+                break;
+            case LanguageLocalization.English:
+                _settingLocalizationText.text = "English";
+                break;
+
+        }
+
     }
 
     public void SelectLanguage()

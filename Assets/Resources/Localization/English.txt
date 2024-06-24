@@ -7,6 +7,8 @@ Back : Back
 Exit : Exit
 Select : Select
 Continue : Continue
+On : On
+Off : Off
 Support the developer : Support the developer
 The drones are over : The drones are over
 Get more for watching : Get more for watching

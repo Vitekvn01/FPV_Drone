@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47300b4829d98074ab559badcd86fce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _doNotDestroyOnLoad: 1
+  _doNotDestroyOnLoad: 0
   LocalizationData: {fileID: 11400000, guid: 1b250d96e78b91e4caae808561282185, type: 2}
   _firsStartPlaySettingsPanel: {fileID: 1219509448}
 --- !u!4 &1248991798

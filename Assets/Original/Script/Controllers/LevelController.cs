@@ -20,7 +20,7 @@ public class LevelController : SingletonBase<LevelController>
     }
     private void Start()
     {
-
+/*        PlayerPrefs.DeleteAll();*/
         Debug.Log(LevelData.CurrentLevel);
         Time.timeScale = 1;
         if (LevelCondition.OnCompleteLevelEvent != null)
@@ -51,6 +51,10 @@ public class LevelController : SingletonBase<LevelController>
 
     public LevelProperties GetLastUnlockLevel()
     {
-        return LevelData.Levels[LevelData.LastUnlockLevel];
+        if (LevelData.LastUnlockLevel! > LevelData.Levels.Length)
+        {
+            return LevelData.Levels[LevelData.LastUnlockLevel];
+        }
+        else return LevelData.Levels[LevelData.Levels.Length - 1];
     }
 }

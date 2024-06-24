@@ -1,0 +1,51 @@
+Play : Oyna
+Levels : Seviyeler
+Collection : Koleksiyon
+Settings : Ayarlar
+Restart : Yeniden Başlat
+Back : Geri
+Exit : Çıkış
+Select : Seç
+Continue : Devam Et
+On : Açık
+Off : Kapalı
+Support the developer : Geliştiriciyi Destekle
+The drones are over : Dronlar bitti
+Get more for watching : İzlemek için daha fazlasını al
+Win : Görev Tamamlandı
+Lose : Kaybettin
+Main menu : Ana Menü
+Next level : Sonraki Seviye
+Arcade : Arcade
+Simulator : Simülatör
+Control settings : Kontrol Ayarları
+Sound settings : Ses Ayarları
+Control mode : Kontrol Modu
+Tilt inversion : Eğim Ters Çevirme
+Input sensitivity : Giriş Hassasiyeti
+Music volume : Müzik Sesi
+Effects volume : Efekt Sesi
+Select control mode : Kontrol Modunu Seç
+Info Collection Panel : Düşman araçlarını yok ederek koleksiyonu aç
+Count : Sayı
+Drones : Dronlar
+Enemies : Düşmanlar
+Language : Dil
+Brokeback mountain : Brokeback Dağı
+Stop the column : Kolonu Durdur
+War crime : Savaş Suçu
+Defense village : Savunma Köyü
+Kamikaze-drone : Kamikaze-Dron
+Task_1 : Görev: 3 tank ve zırhsız bir aracı yok et. Düşman tankları eski ve herhangi bir birim tarafından kolayca yok edilir, ancak bazıları anti-dron ızgaraları ile güçlendirilmiştir.
+Task_2 : Görev: Ağır modern tanklar ve eskort araçlarından oluşan bir düşman kolonu durdur. Kolon tünele ulaşmadan önce yok edilmesi gerekiyor. Düşman tankları iyi zırhlıdır ve tankın taretinin alnına ve mantletine isabetlere dayanabilir.
+Task_3 : Görev: Şehirde düşman topçusunu mümkün olan en kısa sürede tespit edip yok et. Düşman, sivil altyapının arkasına saklanarak insan kalkanı taktikleri kullanıyor. Şehirde uçaksavar kendinden tahrikli silahlar görüldü, ateşlerinden kaçın ve hedefleri vurmak için binalar arasında manevra yap.
+Task_4 : Görev: Düşman köyden tünele geçerek askerlerimizi arkadan vurmak istiyor. Tek bir savaş aracının bile tünele girmesine izin veremezsiniz. Düşman modern tanklar ve uçaksavar silahlarının koruması altında saldırıyor, taretin ve gövdenin alnına isabet edilemez.
+M1 "Abrams" : General Creighton Abrams'ın adını taşıyan üçüncü nesil Amerikan ana muharebe tankıdır. Modern zırhlı kara savaşı için tasarlanmış olup, neredeyse 73,6 kısa ton (66,8 metrik ton) ile hizmetteki en ağır tanklardan biridir. ABD zırhlı kuvvetlerine birkaç modern teknoloji getirdi, bunlar arasında çok yakıtlı türbin motoru, sofistike Chobham kompozit zırh, bilgisayarlı yangın kontrol sistemi, patlama bölmesinde ayrı mühimmat depolama ve mürettebat güvenliği için NBC koruması bulunmaktadır.
+HMMWV : Yüksek Hareket Kabiliyetli Çok Amaçlı Tekerlekli Araç, AM General tarafından üretilen hafif, dört tekerlekten çekişli askeri kamyonlar ve hizmet araçları ailesidir. Aslen orijinal cip ve Vietnam Savaşı dönemindeki M151 Cip gibi rolleri büyük ölçüde devraldı. Öncelikli olarak Amerika Birleşik Devletleri ordusu tarafından kullanılır, aynı zamanda birçok ülke ve kuruluş tarafından da kullanılır ve hatta sivil uyarlamalarda bile bulunur.
+Leopard2 : Leopard 2, üçüncü nesil Alman ana muharebe tankıdır. 1970'lerde geliştirilmiş, 1979'da hizmete girmiş ve Batı Alman ordusunun ana muharebe tankı olarak Leopard 1'in yerini almıştır. Leopard 2'nin çeşitli versiyonları Almanya'nın yanı sıra 13 diğer Avrupa ülkesi ve Kanada, Şili, Endonezya ve Singapur gibi birkaç Avrupa dışı ülke tarafından işletilmektedir. Bazı işletme ülkeleri Leopard 2 tasarımını yerel üretim ve yerel geliştirme için lisanslamıştır.
+Tigr : Askeri Sanayi Şirketi tarafından üretilen 4×4 çok amaçlı tüm arazi piyade hareketlilik aracıdır, ilk olarak 2006'da Rus ordusuna teslim edilmiştir. Öncelikle Rus Silahlı Kuvvetleri ve Rusya İçişleri Bakanlığı tarafından kullanılır, aynı zamanda birçok başka ülke tarafından da kullanılır.
+MSTA-S : 2S19 Msta-S, Sovyetler Birliği'nde ve daha sonra Rusya'da Uraltransmash tarafından tasarlanmış ve üretilmiş 152.4 mm'lik bir kendinden tahrikli obüstür, 2S3 Akatsiya'nın halefi olarak 1989'da hizmete girmiştir. Araç T-80'in yürüyüş takımına sahiptir, ancak T-72'nin dizel motoruyla çalışır.
+T-54 : İkinci Dünya Savaşı sonrasında tanıtılan Sovyet ana muharebe tankları serisidir. İlk T-54 prototipi 1945'in sonlarında Nizhny Tagil'de tamamlanmıştır. 1950'lerin sonlarından itibaren T-54 nihayetinde Sovyet Ordusunun zırhlı birliklerinin, Varşova Paktı ülkelerinin ordularının ve birçok diğer ülkenin ana tankı haline gelmiştir. T-54'ler tanıtıldıkları 20. yüzyılın ikinci yarısından bu yana dünyanın birçok silahlı çatışmasına katılmıştır.
+T-90 : T-72'nin yerini almak üzere geliştirilmiş üçüncü nesil Rus ana muharebe tankıdır. 125 mm 2A46 yivsiz ana top, 1A45T ateş kontrol sistemi, yükseltilmiş motor ve nişancı termal görüşü kullanır. Standart koruyucu önlemler arasında çelik ve kompozit zırh karışımı, duman bombası fırlatıcıları, Kontakt-5 patlayıcı reaktif zırh (ERA) ve Shtora kızılötesi tanksavar güdümlü füze (ATGM) bozma sistemi bulunmaktadır.
+UAZ : Ulyanovsk Otomobil Fabrikası (UAZ) tarafından 1965'ten beri üretilen gövde-çerçeve yapısına sahip dört tekerlekten çekişli off-road van ve hafif kamyon ailesidir. Aslen Sovyet ordusu için tasarlanmış olup, 1985'ten beri daha modern motorlar ve uluslararası uyumlu aydınlatmalar gibi güncellemeler almıştır, ayrıca yeni model numaraları ile: standart van için UAZ-3741, (mürettebat kabini) kamyonlar genellikle UAZ-3303 ile başlar ve versiyona göre bir veya iki ek rakamla belirtilir.
+Shilka : ZSU-23-4 "Shilka" Sovyet yapımı kendinden tahrikli uçaksavar topudur, 2A6 muharebe aracının seri üretimine 1964'te başlanmıştır. ZSU, dört namlulu otomatik 23 mm top ile donatılmıştır. Kurulumun ateş hızı dakikada 3400 atıştır. Hedefe manuel, yarı otomatik ve otomatik olarak nişan alınabilir. Otomatik ve yarı otomatik modlarda standart bir radar istasyonu kullanılır. BM, kara kuvvetlerinin doğrudan korunması, 2500 m'ye kadar menzillerde ve 1500 m'ye kadar yüksekliklerde, 450 m/s hıza kadar uçan hava hedeflerinin yanı sıra sabit bir noktadan, kısa bir duraklamadan ve hareket halinde 2000 m'ye kadar yer (yüzey) hedeflerinin imha edilmesi için tasarlanmıştır.

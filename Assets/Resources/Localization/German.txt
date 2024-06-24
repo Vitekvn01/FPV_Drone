@@ -1,0 +1,51 @@
+Play : Spielen
+Levels : Ebene
+Collection : Sammlung
+Settings : Einstellungen
+Restart : Neustart
+Back : Zurück
+Exit : Beenden
+Select : Auswählen
+Continue : Fortsetzen
+On : Ein
+Off : Aus
+Support the developer : Unterstütze den Entwickler
+The drones are over : Die Drohnen sind vorbei
+Get more for watching : Mehr fürs Zuschauen bekommen
+Win : Mission abgeschlossen
+Lose : Du hast verloren
+Main menu : Hauptmenü
+Next level : Nächstes Level
+Arcade : Arcade
+Simulator : Simulator
+Control settings : Steuerungseinstellungen
+Sound settings : Toneinstellungen
+Control mode : Steuerungsmodus
+Tilt inversion : Neigungsumkehr
+Input sensitivity : Eingabeempfindlichkeit
+Music volume : Musiklautstärke
+Effects volume : Effektlautstärke
+Select control mode : Steuerungsmodus auswählen
+Info Collection Panel : Zerstöre feindliche Fahrzeuge, um die Sammlung zu öffnen
+Count : Anzahl
+Drones : Drohnen
+Enemies : Feinde
+Language : Sprache
+Brokeback mountain : Brokeback Mountain
+Stop the column : Halte die Kolonne auf
+War crime : Kriegsverbrechen
+Defense village : Verteidigungsdorf
+Kamikaze-drone : Kamikaze-Drohne
+Task_1 : Aufgabe: Zerstöre 3 Panzer und ein ungepanzertes Fahrzeug. Feindliche Panzer sind veraltet und können leicht in jeder Einheit zerstört werden, aber einige von ihnen sind mit Anti-Drohnen-Gittern verstärkt.
+Task_2 : Aufgabe: Halte eine feindliche Kolonne aus schweren modernen Panzern und Begleitfahrzeugen auf. Es ist notwendig, die Kolonne zu zerstören, bevor sie den Tunnel erreicht. Feindliche Panzer sind gut gepanzert und können Treffer auf die Stirn und den Mantel des Panzerturms aushalten.
+Task_3 : Aufgabe: Es ist notwendig, so schnell wie möglich die feindliche Artillerie in der Stadt zu entdecken und zu zerstören. Der Feind benutzt menschliche Schutzschilde und versteckt sich hinter ziviler Infrastruktur. In der Stadt wurden Flugabwehr-Selbstfahrlafetten gesichtet, weiche ihrem Feuer aus und manövriere zwischen den Gebäuden, um die Ziele zu treffen.
+Task_4 : Aufgabe: Der Feind will durch das Dorf zum Tunnel durchbrechen, um unsere Truppen in den Rücken zu fallen. Kein einziges Kampffahrzeug darf in den Tunnel gelangen. Der Feind greift mit modernen Panzern an, die nicht in die Stirn des Turms und des Rumpfes getroffen werden können, unter dem Schutz von Flugabwehrgeschützen.
+M1 "Abrams" : Ist ein amerikanischer Kampfpanzer der dritten Generation, benannt nach General Creighton Abrams. Konzipiert für moderne gepanzerte Bodenkriegsführung, ist er mit fast 73,6 kurzen Tonnen (66,8 metrischen Tonnen) einer der schwersten Panzer im Einsatz. Er führte mehrere moderne Technologien in die amerikanischen Panzerstreitkräfte ein, darunter einen multifuel Turbinenmotor, eine ausgeklügelte Chobham-Kompositpanzerung, ein computergestütztes Feuerleitsystem, separate Munitionslagerung in einem Sprengschutzabteil und NBC-Schutz für die Sicherheit der Besatzung.
+HMMWV : Das High Mobility Multipurpose Wheeled Vehicle ist eine Familie leichter, vierradgetriebener, militärischer Lkw und Nutzfahrzeuge, die von AM General produziert werden. Es hat weitgehend die Rollen übernommen, die zuvor von den ursprünglichen Jeep und anderen Fahrzeugen wie dem Vietnamkrieg-Ära M151 Jeep, dem M561 "Gama Goat", deren M718A1 und M792 Ambulanzversionen, dem Commercial Utility Cargo Vehicle und anderen leichten Lkw erfüllt wurden. Es wird hauptsächlich vom US-Militär verwendet, aber auch von zahlreichen anderen Ländern und Organisationen und sogar in zivilen Anpassungen.
+Leopard2 : Der Leopard 2 ist ein deutscher Kampfpanzer der dritten Generation. Er wurde in den 1970er Jahren entwickelt und trat 1979 in Dienst, um den früheren Leopard 1 als Hauptkampfpanzer der westdeutschen Armee zu ersetzen. Verschiedene Iterationen des Leopard 2 werden weiterhin von den Streitkräften Deutschlands sowie von 13 anderen europäischen Ländern und mehreren nichteuropäischen Ländern, darunter Kanada, Chile, Indonesien und Singapur, betrieben. Einige Betriebsländer haben das Leopard 2-Design für die lokale Produktion und die heimische Entwicklung lizenziert.
+Tigr : Ist ein russisches 4×4-Mehrzweck-Allrad-Infanteriemobilitätsfahrzeug, das von der Military Industrial Company hergestellt wird und erstmals 2006 an die russische Armee geliefert wurde. Es wird hauptsächlich von den russischen Streitkräften und dem russischen Innenministerium verwendet, aber auch von zahlreichen anderen Ländern.
+MSTA-S : Die 2S19 Msta-S ist eine 152,4-mm-Selbstfahrlafette, die in der Sowjetunion und später in Russland von Uraltransmash entwickelt und hergestellt wurde und 1989 als Nachfolger der 2S3 Akatsiya in Dienst gestellt wurde. Das Fahrzeug verfügt über das Laufwerk des T-80, wird jedoch vom Dieselmotor des T-72 angetrieben.
+T-54 : Serie sowjetischer Kampfpanzer, die in den Jahren nach dem Zweiten Weltkrieg eingeführt wurden. Der erste T-54-Prototyp wurde Ende 1945 in Nischni Tagil fertiggestellt. Ab den späten 1950er Jahren wurde der T-54 schließlich der Hauptpanzer für die gepanzerten Einheiten der sowjetischen Armee, der Armeen der Warschauer Pakt-Staaten und vieler anderer. T-54-Panzer waren seit ihrer Einführung in der zweiten Hälfte des 20. Jahrhunderts an vielen der weltweiten bewaffneten Konflikte beteiligt.
+T-90 : Ist ein russischer Kampfpanzer der dritten Generation, der entwickelt wurde, um den T-72 zu ersetzen. Er verwendet eine 125 mm 2A46 Glattrohrkanone, das 1A45T-Feuerleitsystem, einen aufgerüsteten Motor und ein Wärmebildgerät für den Schützen. Zu den Standard-Schutzmaßnahmen gehören eine Mischung aus Stahl- und Verbundpanzerung, Rauchgranatenwerfer, Kontakt-5 Sprengreaktivpanzerung (ERA) und das Shtora-Infrarot-Anti-Panzerabwehrlenkwaffensystem (ATGM).
+UAZ : Ist eine Familie von allradgetriebenen Geländewagen und leichten Lastwagen mit Rahmenbauweise und Frontlenkerdesign, die seit 1965 vom Ulyanovsk Automobilwerk (UAZ) hergestellt werden. Ursprünglich für das sowjetische Militär konzipiert, wurden die Lieferwagen seit 1985 mit moderneren Motoren und international konformer Beleuchtung sowie neuen Modellnummern aktualisiert: UAZ-3741 für den Standardlieferwagen, während (Fahrerhaus-) Lastwagen meist mit UAZ-3303 beginnen, oft mit einer oder zwei zusätzlichen Ziffern, die die Version angeben.
+Shilka : Die ZSU-23-4 "Shilka" ist eine sowjetische selbstfahrende Flugabwehrkanone, deren Serienproduktion des 2A6-Kampffahrzeugs 1964 begann. Die ZSU ist mit einer vierfachen automatischen 23-mm-Kanone bewaffnet. Die Feuerrate der Installation beträgt 3400 Schuss pro Minute. Sie kann manuell, halbautomatisch und automatisch auf das Ziel gerichtet werden. Im automatischen und halbautomatischen Modus wird eine Standardradarstation verwendet. Die BM ist für die direkte Deckung von Bodentruppen, die Zerstörung von Luftzielen in Entfernungen bis zu 2500 m und Höhen bis zu 1500 m, die mit Geschwindigkeiten bis zu 450 m/s fliegen, sowie für Boden- (Oberflächen-) Ziele in Entfernungen bis zu 2000 m aus dem Stand, aus einem kurzen Halt und in Bewegung ausgelegt.

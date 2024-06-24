@@ -21,7 +21,7 @@ public class Drone : Destructible
     [SerializeField] private List<GameObject> helixList;
     [SerializeField] protected AudioSource _helixSound;
 
-    bool isHovering;
+    bool isHovering = true;
 
 
     private bool isTraction = false;
@@ -30,9 +30,9 @@ public class Drone : Destructible
 
     protected Rigidbody rb;
     public Rigidbody RB => rb;
-    protected Vector3 tiltDir; // направление наклона
-    protected Vector3 tractionDir; // направление тяги
-    protected Vector3 rotationDir; // направление поврота
+    protected Vector3 tiltDir = new Vector3(0, 0, 0); // направление наклона
+    protected Vector3 tractionDir = new Vector3(0, 0, 0); // направление тяги
+    protected Vector3 rotationDir = new Vector3(0, 0, 0); // направление поврота
     protected float _hoverForce;
 
 

@@ -34,6 +34,14 @@ public class CompletePanel : MonoBehaviour
         PlayerController.OnOverCountDroneEvent.AddListener(ShowNullDronePanel);
     }
 
+    private void Update()
+    {
+        if (PlayerController.Instance.CountDrone    != 0)
+        {
+            _nullCountDronePanel.SetActive(false);
+        }
+    }
+
     private void ShowWinPanel()
     {
         _textWinButton.text = LocalizationData.DictionaryLocalizationWords["Win"];
@@ -75,7 +83,6 @@ public class CompletePanel : MonoBehaviour
     public void ShowReward()
     {
         AdsYandex.Instance.ShowReawardAds();
-        _nullCountDronePanel.SetActive(false);
     }
 
     public void ShowFullScreen()

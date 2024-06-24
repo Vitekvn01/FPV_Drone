@@ -104,7 +104,7 @@ public class VehicalCollectionData : ScriptableObject
     public void SaveToFile()
     {
         SetVehiclePropiertyListInContainer();
-        string filePath = Path.Combine(Application.persistentDataPath, filename);/// 1. Получение пути к файлу:
+/*        string filePath = Path.Combine(Application.persistentDataPath, filename);/// 1. Получение пути к файлу:*/
 
         // Создаем экземпляр LevelDataContainer и сохраняем в него массив _levels
         VehiclesPropertiesListContainer container = new VehiclesPropertiesListContainer
@@ -113,15 +113,29 @@ public class VehicalCollectionData : ScriptableObject
         };
 
         // Преобразуем экземпляр LevelDataContainer в JSON-строку и сохраняем в файл
-        var data = JsonUtility.ToJson(container); /// JsonUtility.ToJson(this) преобразует экземпляр LevelData в JSON-строку.
-        File.WriteAllText(filePath, data);/// Запись данных в файл:
+        PlayerPrefs.SetString("VehicalCollectionData", JsonUtility.ToJson(container));
+/*        var data = JsonUtility.ToJson(container); /// JsonUtility.ToJson(this) преобразует экземпляр LevelData в JSON-строку.*/
+/*        File.WriteAllText(filePath, data);/// Запись данных в файл:*/
 
         Debug.Log("Save");
     }
 
     public static VehicalCollectionData LoadFromFile(VehicalCollectionData existingVehicalCollectionData)
     {
-        Debug.Log("Load");
+
+        string jsonData = PlayerPrefs.GetString("VehicalCollectionData", "");
+
+        if (!string.IsNullOrEmpty(jsonData))
+        {
+            VehiclesPropertiesListContainer container = JsonUtility.FromJson<VehiclesPropertiesListContainer>(jsonData);
+
+            // Записываем данные из контейнера в существующий экземпляр LevelData
+            existingVehicalCollectionData._vehiclesPropertiesData = container.VehiclesDataListContainer;
+            existingVehicalCollectionData.GetVehicleList();
+            return existingVehicalCollectionData;
+        }
+        else return null;
+        /*Debug.Log("Load");
         string filePath = Path.Combine(Application.persistentDataPath, filename);
 
         if (File.Exists(filePath))
@@ -136,7 +150,7 @@ public class VehicalCollectionData : ScriptableObject
             existingVehicalCollectionData.GetVehicleList();
             return existingVehicalCollectionData;
         }
-        else return null;
+        else return null;*/
     }
 }
 
