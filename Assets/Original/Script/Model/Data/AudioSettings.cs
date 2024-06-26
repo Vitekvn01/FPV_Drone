@@ -30,7 +30,17 @@ public class AudioSettings : ScriptableObject
 
     public void SoundOff()
     {
-        EffectMixer.SetFloat("MasterVolume", - 80);
-        MusicMixer.SetFloat("MasterVolume", - 80);
+        EffectMixer.SetFloat("MasterVolume", -80);
+        MusicMixer.SetFloat("MasterVolume", -80);
+    }
+
+    public void EffectSoundOff()
+    {
+        EffectMixer.SetFloat("MasterVolume", -80);
+    }
+
+    public void MusicSoundOff()
+    {
+        MusicMixer.SetFloat("MasterVolume", -80);
     }
 }

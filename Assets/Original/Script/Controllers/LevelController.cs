@@ -38,6 +38,7 @@ public class LevelController : SingletonBase<LevelController>
 
     private void LevelPassed()
     {
+        AudioController.Instance.AudioSettings.EffectSoundOff();
         _levelData.NextLevelUnlock();
         Debug.Log("Победа");
         OnLevelPassedEvent.Invoke();
@@ -45,6 +46,7 @@ public class LevelController : SingletonBase<LevelController>
 
     private void LevelLose()
     {
+        AudioController.Instance.AudioSettings.EffectSoundOff();
         Time.timeScale = 0;
         OnLevelLoseEvent.Invoke();
     }
