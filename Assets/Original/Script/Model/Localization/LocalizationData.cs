@@ -23,27 +23,27 @@ public class LocalizationData : ScriptableObject
 
     private string GetSystemLanguage()
     {
-        /*        if (Enum.IsDefined(typeof(LanguageLocalization), Application.systemLanguage.ToString()))
-                {
-                    Debug.Log(Application.systemLanguage.ToString());
-                    return Application.systemLanguage.ToString();
-                }
-                else
-                {
-                    return SystemLanguage.English.ToString();
-                }*/
-
-        if (SDKLANG.Instance.Languages != null)
+        if (Enum.IsDefined(typeof(LanguageLocalization), Application.systemLanguage.ToString()))
         {
-            Debug.Log("Languages = " + SDKLANG.Instance.Languages);
-            return SDKLANG.Instance.Languages;
-
+            Debug.Log(Application.systemLanguage.ToString());
+            return Application.systemLanguage.ToString();
         }
         else
         {
-            Debug.Log("Languages = null ");
-            return LanguageLocalization.English.ToString();
+            return SystemLanguage.English.ToString();
         }
+
+        /*       if (SDKLANG.Instance.Languages != null)
+               {
+                   Debug.Log("Languages = " + SDKLANG.Instance.Languages);
+                   return SDKLANG.Instance.Languages;
+
+               }
+               else
+               {
+                   Debug.Log("Languages = null ");
+                   return LanguageLocalization.English.ToString();
+               }*/
 
 
     }

@@ -11,9 +11,15 @@ public class VehicleCollectionController : SingletonBase<VehicleCollectionContro
 
     private int index = 0;
     // Start is called before the first frame update
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _vehicalCollectionData.FillVehiclePropertiesDictionary();
+    }
     void Start()
     {
-        _vehicalCollectionData.FillVehiclePropertiesDictionary();
+        
         VehicalCollectionData.LoadFromFile(_vehicalCollectionData);
     }
 

@@ -236,6 +236,7 @@ MonoBehaviour:
   _doNotDestroyOnLoad: 1
   Languages: 
   deviceString: 
+  On: 1
 --- !u!4 &590074285
 Transform:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class SDKLANG : SingletonBase<SDKLANG>
 {
     public string Languages;
     public string deviceString;
+    [SerializeField] private bool On;
 
     [DllImport("__Internal")] private static extern void ProjectStarted();
     
@@ -22,7 +23,15 @@ public class SDKLANG : SingletonBase<SDKLANG>
 
     private void Start()
     {
-       ProjectStarted();
+        if (On)
+        {
+            ProjectStarted();
+        }
+        else
+        {
+            UIController.Instance.LocalizationData.LoadLocalizaionText();
+        }
+
     }
 
 
