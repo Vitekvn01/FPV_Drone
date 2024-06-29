@@ -369,6 +369,8 @@ MonoBehaviour:
   _downClickHold: {fileID: 3776712206176467238}
   _mobilelJoystickRight: {fileID: 4998920845995604220}
   _mobilelJoystickLeft: {fileID: 449604041495041047}
+  _drugAracade: 0.6
+  _drugSimulator: 0.2
   _inputSettings: {fileID: 11400000, guid: d57d1e86861c1c54ea9df8a01883bb05, type: 2}
   _inputMode: 0
   _droneType: 0
@@ -383,6 +385,7 @@ GameObject:
   - component: {fileID: 8810810310612799794}
   - component: {fileID: 8238679874424603816}
   - component: {fileID: 5582521068385580169}
+  - component: {fileID: 2507573680824524624}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -506,6 +509,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2507573680824524624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3863980661864717950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae17749c5b2653e42bbd9ac6f44d0c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: ZOOM
 --- !u!1 &4183223637407350830
 GameObject:
   m_ObjectHideFlags: 0

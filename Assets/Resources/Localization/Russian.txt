@@ -9,11 +9,14 @@ Select : Выбрать
 Continue : Продолжить
 On : Вкл
 Off : Выкл
+KM/H : КМ/Ч
+H : ВЫС
+ZOOM : ЗУМ
 Support the developer : Поддержать разработчика
 Win : Миссия выполнена
 Lose : Вы проиграли
 The drones are over : Дроны закончились
-Get more for watching : Получить за рекламу
+Get more for watching : 3 дрона за просмотр рекламы
 Main menu : Главное меню
 Next level : Следующий уровень
 Arcade : Аркада

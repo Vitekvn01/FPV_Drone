@@ -9,9 +9,12 @@ Select : Seç
 Continue : Devam Et
 On : Açık
 Off : Kapalı
+KM/H : KM/S
+H : Y
+ZOOM : YAKINLAŞTIR
 Support the developer : Geliştiriciyi Destekle
 The drones are over : Dronlar bitti
-Get more for watching : İzlemek için daha fazlasını al
+Get more for watching : Reklam görüntüleme başına 3 drone
 Win : Görev Tamamlandı
 Lose : Kaybettin
 Main menu : Ana Menü

@@ -24,13 +24,13 @@ public class IndicatorsFlight : MonoBehaviour
     {
         if (PlayerController.CurrentDrone != null)
         {
-            _speedText.text = (int)PlayerController.CurrentDrone.GetCurrentSpeed() + " KM/H";
-            _heightText.text = (int)PlayerController.CurrentDrone.GetCurrentHeight() + " H";
+            _speedText.text = (int)PlayerController.CurrentDrone.GetCurrentSpeed() + LocalizationData.DictionaryLocalizationWords["KM/H"];
+            _heightText.text = (int)PlayerController.CurrentDrone.GetCurrentHeight() + LocalizationData.DictionaryLocalizationWords["H"];
         }
         else
         {
-            _speedText.text = "0" + " KM/H";
-            _heightText.text = "0" + " H";
+            _speedText.text = "0" + LocalizationData.DictionaryLocalizationWords["KM/H"];
+            _heightText.text = "0" + LocalizationData.DictionaryLocalizationWords["H"];
         }
 
 

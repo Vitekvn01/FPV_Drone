@@ -13,11 +13,13 @@ public class AdsYandex : SingletonBase<AdsYandex>
 
     public void ShowFullScreenAds()
     {
+        AudioController.Instance.AudioSettings.SoundOff();
         ShowFullscreen();
     }
 
     public void ShowReawardAds()
     {
+        AudioController.Instance.AudioSettings.SoundOff();
         ShowRewarded();
     }
 

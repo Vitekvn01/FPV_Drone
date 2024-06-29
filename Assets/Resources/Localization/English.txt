@@ -7,11 +7,14 @@ Back : Back
 Exit : Exit
 Select : Select
 Continue : Continue
+KM/H : KM/H
+H : H
+ZOOM : ZOOM
 On : On
 Off : Off
 Support the developer : Support the developer
 The drones are over : The drones are over
-Get more for watching : Get more for watching
+Get more for watching : 3 drones per ad view
 Win : Mission complete
 Lose : You Lose
 Main menu : Main menu

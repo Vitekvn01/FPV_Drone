@@ -9,9 +9,12 @@ Select : Auswählen
 Continue : Fortsetzen
 On : Ein
 Off : Aus
+KM/H : KM/H
+H : H
+ZOOM : ZOOMEN
 Support the developer : Unterstütze den Entwickler
 The drones are over : Die Drohnen sind vorbei
-Get more for watching : Mehr fürs Zuschauen bekommen
+Get more for watching : 3 Drohnen pro Anzeigenansicht
 Win : Mission abgeschlossen
 Lose : Du hast verloren
 Main menu : Hauptmenü
