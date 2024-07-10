@@ -130,49 +130,30 @@ public class LocalizationData : ScriptableObject
 
     public void LoadLocalizaionSDKText(string Language)
     {
-/*        if (Language == "ru")
+
+        if (Language == "ru")
         {
             Localization("Russian");
             language = LanguageLocalization.Russian;
+            PlayerPrefs.SetString("Language", language.ToString());
         }
         if (Language == "en")
         {
             Localization("English");
             language = LanguageLocalization.English;
-        }*/
-
-        if (PlayerPrefs.GetInt("FirstStartLocalizaion", 0) == 0)
-        {
-            if (Language == "ru")
-            {
-                Localization("Russian");
-                language = LanguageLocalization.Russian;
-                PlayerPrefs.SetString("Language", language.ToString());
-            }
-            if (Language == "en")
-            {
-                Localization("English");
-                language = LanguageLocalization.English;
-                PlayerPrefs.SetString("Language", language.ToString());
-            }
-            if (Language == "tr")
-            {
-                Localization("Turkish");
-                language = LanguageLocalization.Turkish;
-                PlayerPrefs.SetString("Language", language.ToString());
-            }
-            if (Language == "de")
-            {
-                Localization("German");
-                language = LanguageLocalization.German;
-                PlayerPrefs.SetString("Language", language.ToString());
-            }
-
-            PlayerPrefs.SetInt("FirstStartLocalizaion", 1);
+            PlayerPrefs.SetString("Language", language.ToString());
         }
-        else
+        if (Language == "tr")
         {
-            Localization(PlayerPrefs.GetString("Language", "English"));
+            Localization("Turkish");
+            language = LanguageLocalization.Turkish;
+            PlayerPrefs.SetString("Language", language.ToString());
+        }
+        if (Language == "de")
+        {
+            Localization("German");
+            language = LanguageLocalization.German;
+            PlayerPrefs.SetString("Language", language.ToString());
         }
 
     }

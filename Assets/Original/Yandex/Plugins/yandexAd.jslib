@@ -13,6 +13,7 @@ mergeInto(LibraryManager.library, {
           },
           onError: function(error) {
             console.log("Ошибка по рекламе Fullscreen.");
+            myGameInstance.SendMessage("StartAds", "CloseReward");
           }
       }
       })
@@ -35,6 +36,7 @@ mergeInto(LibraryManager.library, {
           }, 
           onError: (e) => {
             console.log('Ошибка по рекламе Rewarded:', e);
+            myGameInstance.SendMessage("StartAds", "CloseReward");
           }
       }
   })

@@ -61,7 +61,7 @@ public class CompletePanel : MonoBehaviour
 
     private void ShowNullDronePanel()
     {
-        AudioController.Instance.AudioSettings.EffectSoundOff();
+/*        AudioController.Instance.AudioSettings.EffectSoundOff();*/
         _nullDroneText.text = LocalizationData.DictionaryLocalizationWords["The drones are over"];
         _textRewardButton.text = LocalizationData.DictionaryLocalizationWords["Get more for watching"];
         _text—ontinueButton.text = LocalizationData.DictionaryLocalizationWords["Continue"];

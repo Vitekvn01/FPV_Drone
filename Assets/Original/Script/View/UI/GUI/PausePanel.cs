@@ -22,11 +22,13 @@ public class PausePanel : MonoBehaviour
 
     public void ShowPausePanel()
     {
-        Time.timeScale = 0;
+        AudioController.Instance.AudioSettings.EffectSoundOff();
         gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
     public void ContinueButton()
     {
+        AudioController.Instance.AudioSettings.LoadAudioSettings();
         Time.timeScale = 1;
         gameObject.SetActive(false);
     }
@@ -45,6 +47,7 @@ public class PausePanel : MonoBehaviour
     public void RestartButton()
     {
         Time.timeScale = 1;
+        AudioController.Instance.AudioSettings.LoadAudioSettings();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         AdsYandex.Instance.ShowFullScreenAds();
     }
