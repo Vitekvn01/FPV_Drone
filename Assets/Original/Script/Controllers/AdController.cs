@@ -14,6 +14,7 @@ public class AdController : SingletonBase<AdController>
         Appodeal.Initialize(appKey, adTypes);
         Appodeal.SetAutoCache(adTypes, false);
         Appodeal.Cache(adTypes);
+        AppodealCallbacks.RewardedVideo.OnFinished += OnRewardedVideoFinished;
     }
     public void OnInitializationFinished(object sender, SdkInitializedEventArgs e)
     {
@@ -41,5 +42,9 @@ public class AdController : SingletonBase<AdController>
     }
 
 
+    private void OnRewardedVideoFinished(object sender, RewardedVideoFinishedEventArgs e)
+    {
+        PlayerController.Instance.AddPlayerDrone(3);
+    }
 
 }
