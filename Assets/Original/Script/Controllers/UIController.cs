@@ -10,12 +10,12 @@ public class UIController : SingletonBase<UIController>
     protected override void Awake()
     {
         base.Awake();
-        
+        LocalizationData.LoadLocalizaionText();
     }
 
     private void Start()
     {
-/*        LocalizationData.LoadLocalizaionText();*/
+
     }
 
     public void FirstStartSettingsSetActive()

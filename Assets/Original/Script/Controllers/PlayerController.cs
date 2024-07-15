@@ -15,6 +15,8 @@ public class PlayerController : SingletonBase<PlayerController>
 
     [SerializeField] private Camera _cameraScout;
 
+    private int _tryCountAdShow = 3;
+
     [SerializeField] private ScoutDrone _droneScout; // временно
 
     [SerializeField] private GameObject _respawnPanel;
@@ -51,6 +53,15 @@ public class PlayerController : SingletonBase<PlayerController>
     private void RemoveDroneCount()
     {
         _countDrone -= 1;
+
+        _tryCountAdShow = -1;
+
+        if (_tryCountAdShow <= 0)
+        {
+            AdController.Instance.ShowInterstitial();
+            _tryCountAdShow = 3;
+        }
+
         if (_countDrone <= 0 && Enemy.ListEnemies.Count != 0)
         {
            OnOverCountDroneEvent.Invoke();

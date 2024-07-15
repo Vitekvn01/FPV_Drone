@@ -72,7 +72,6 @@ public class CompletePanel : MonoBehaviour
     {
         SceneManager.LoadScene(LevelData.CurrentLevel.NextSceneName);
         LevelData.SetCurrentLevel(LevelData.CurrentLevel.NextLevelProperties);
-        AdsYandex.Instance.ShowFullScreenAds();
     }
 
     public void LevelLose()
@@ -83,11 +82,11 @@ public class CompletePanel : MonoBehaviour
 
     public void ShowReward()
     {
-        AdsYandex.Instance.ShowReawardAds();
+        AdController.Instance.ShowRewarded();
     }
 
-    public void ShowFullScreen()
+/*    public void ShowFullScreen()
     {
         AdsYandex.Instance.ShowFullScreenAds();
-    }
+    }*/
 }

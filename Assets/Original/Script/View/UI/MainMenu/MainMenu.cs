@@ -75,6 +75,7 @@ public class MainMenu : MonoBehaviour
 
     public void CollectionButton()
     {
+        AdController.Instance.ShowInterstitial();
         AllPanelSetActiveFalse();
         _collectionPanel.SetActive(true);
         _collectionPanel.GetComponent<CollectionPanel>().StartCollectionButton();

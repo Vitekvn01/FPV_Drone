@@ -60,7 +60,7 @@
   <files />
   <settings>
     <setting name="androidAbis" value="armeabi-v7a" />
-    <setting name="bundleId" value="com.DefaultCompany.FPV_Drone" />
+    <setting name="bundleId" value="com.GamestudioVFN.FPVKamikadzeDroneWars" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
     <setting name="gradlePropertiesTemplateEnabled" value="True" />

@@ -204,54 +204,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &590074283
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 590074285}
-  - component: {fileID: 590074284}
-  m_Layer: 0
-  m_Name: SDKLANG
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &590074284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 590074283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881e8faf14963c6489f914f6184d2acf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _doNotDestroyOnLoad: 1
-  Languages: 
-  deviceString: 
-  On: 1
---- !u!4 &590074285
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 590074283}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 565.5875, y: 61.02643, z: 713.2131}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &692782039
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +855,7 @@ GameObject:
   - component: {fileID: 1621977471}
   - component: {fileID: 1621977472}
   m_Layer: 0
-  m_Name: StartAds
+  m_Name: AdController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -933,7 +885,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1621977470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b6cbcee8d379b14fbf1017892a37d7c, type: 3}
+  m_Script: {fileID: 11500000, guid: 56745aa5a260f004680a3b754b24a6f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _doNotDestroyOnLoad: 1
@@ -1146,4 +1098,3 @@ SceneRoots:
   - {fileID: 1248991798}
   - {fileID: 1533012101}
   - {fileID: 1621977471}
-  - {fileID: 590074285}

@@ -25,6 +25,8 @@ public class Prologue : MonoBehaviour
 
     private void Start()
     {
+        AdController.Instance.ShowInterstitial();
+
         panelPrlogue.SetActive(false);
 
         if (playStart)
