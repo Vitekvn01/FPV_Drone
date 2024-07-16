@@ -54,10 +54,13 @@ public class PlayerController : SingletonBase<PlayerController>
     {
         _countDrone -= 1;
 
-        _tryCountAdShow = -1;
+        _tryCountAdShow -= 1;
 
-        if (_tryCountAdShow <= 0)
+        Debug.Log(_tryCountAdShow);
+
+        if (_tryCountAdShow == 0)
         {
+            Debug.Log("Должна быть реклама");
             AdController.Instance.ShowInterstitial();
             _tryCountAdShow = 3;
         }

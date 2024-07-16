@@ -55,7 +55,6 @@ public class MainMenu : MonoBehaviour
                 SceneManager.LoadScene(LevelController.Instance.LevelData.LastUnlockLevel);
             }
 
-            AdsYandex.Instance.ShowFullScreenAds();
         }
 
     }
