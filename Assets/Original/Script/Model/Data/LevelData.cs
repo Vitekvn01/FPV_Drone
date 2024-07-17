@@ -86,7 +86,7 @@ public class LevelData : ScriptableObject
     {
   
         Debug.Log("Save");
-/*        string filePath = Path.Combine(Application.persistentDataPath, filename);/// 1. Получение пути к файлу:*/
+        string filePath = Path.Combine(Application.persistentDataPath, filename);/// 1. Получение пути к файлу:
 
         // Создаем экземпляр LevelDataContainer и сохраняем в него массив _levels
         LevelDataContainer container = new LevelDataContainer
@@ -95,20 +95,20 @@ public class LevelData : ScriptableObject
         };
 
         // Преобразуем экземпляр LevelDataContainer в JSON-строку и сохраняем в файл
-        PlayerPrefs.SetString("LevelData", JsonUtility.ToJson(container));
-/*        var data = JsonUtility.ToJson(container); /// JsonUtility.ToJson(this) преобразует экземпляр LevelData в JSON-строку.
+        var data = JsonUtility.ToJson(container); /// JsonUtility.ToJson(this) преобразует экземпляр LevelData в JSON-строку.
         File.WriteAllText(filePath, data);/// Запись данных в файл:*/
     }
 
     public static LevelData LoadFromFile(LevelData existingLevelData)
     {
         Debug.Log("Load");
-        string jsonData = PlayerPrefs.GetString("LevelData", "");
+        string filePath = Path.Combine(Application.persistentDataPath, filename);/// 1. Получение пути к файлу:*/
 
-        if (!string.IsNullOrEmpty(jsonData))
+        if (File.Exists(filePath))
         {
+            var data = File.ReadAllText(filePath);
             // Десериализуем данные из файла в экземпляр LevelDataContainer
-            LevelDataContainer container = JsonUtility.FromJson<LevelDataContainer>(jsonData);
+            LevelDataContainer container = JsonUtility.FromJson<LevelDataContainer>(data);
     
             // Записываем данные из контейнера в существующий экземпляр LevelData
             existingLevelData._indexLevelUnlock = container.CountLevelUnlock;

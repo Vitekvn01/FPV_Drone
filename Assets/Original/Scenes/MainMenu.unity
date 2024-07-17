@@ -613,6 +613,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 468938484974968974, guid: 0521a8c1ae220f34e9160eace7030049, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1148483578356800941, guid: 0521a8c1ae220f34e9160eace7030049, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -779,7 +783,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4548147180992507972, guid: 0521a8c1ae220f34e9160eace7030049, type: 3}
       propertyPath: m_CellSize.x
-      value: 480
+      value: 384
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510034028322143506, guid: 0521a8c1ae220f34e9160eace7030049, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510034028322143506, guid: 0521a8c1ae220f34e9160eace7030049, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510034028322143506, guid: 0521a8c1ae220f34e9160eace7030049, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510034028322143506, guid: 0521a8c1ae220f34e9160eace7030049, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510034028322143506, guid: 0521a8c1ae220f34e9160eace7030049, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510034028322143506, guid: 0521a8c1ae220f34e9160eace7030049, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6400203359298263232, guid: 0521a8c1ae220f34e9160eace7030049, type: 3}
       propertyPath: _settingLocalizationText
