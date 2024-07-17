@@ -8,7 +8,7 @@ public class AdController : SingletonBase<AdController>
 {
     private void Start()
     {
-        Appodeal.SetTesting(true);
+/*        Appodeal.SetTesting(true);*/
         int adTypes = AppodealAdType.Interstitial | AppodealAdType.RewardedVideo;
         string appKey = "95934b5e70608d59b113126c0d7cd3b8fb867d57889001b0";
         AppodealCallbacks.Sdk.OnInitialized += OnInitializationFinished;
