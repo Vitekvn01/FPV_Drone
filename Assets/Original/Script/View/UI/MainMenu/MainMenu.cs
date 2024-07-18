@@ -94,9 +94,4 @@ public class MainMenu : MonoBehaviour
         _collectionPanel.SetActive(false);
     }
 
-    public void SupportButton()
-    {
-        AdsYandex.Instance.ShowReawardAds();
-    }
-
 }

@@ -32,7 +32,6 @@ public class LevelSelectionButton : MonoBehaviour
             {
                 LevelData.SetCurrentLevel(_levelProperties);
                 SceneManager.LoadScene(_levelProperties.SceneName);
-                AdsYandex.Instance.ShowFullScreenAds();
             }
 
         }

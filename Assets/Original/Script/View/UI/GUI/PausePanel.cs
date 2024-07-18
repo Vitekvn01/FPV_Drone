@@ -49,6 +49,5 @@ public class PausePanel : MonoBehaviour
         Time.timeScale = 1;
         AudioController.Instance.AudioSettings.LoadAudioSettings();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        AdsYandex.Instance.ShowFullScreenAds();
     }
 }
